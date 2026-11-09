@@ -338,6 +338,13 @@ const stateObj = (code,name)=>{const s=(STATES[code]||[]).find(s=>s[0]===name);r
 let USERP = store.get("userPrices",{});
 const upKey=(c,st,it)=>`${c.code}|${st?st.name:""}|${it.id}`;
 function userPrice(c,st,it){return USERP[upKey(c,st,it)]||(st?null:null)}
+// Items priced the same across India (fixed national prices) don't need a city note.
+const NATIONAL_SAME=new Set(["tech","appl","car","gold","tel","fly"]);
+function chennaiFallback(c,st,it){
+  if(c.code!=="IN"||!st||st.name==="Tamil Nadu (Chennai)"||NATIONAL_SAME.has(it.cat)||["fuel","diesel"].includes(it.cat))return false;
+  if(USERP[upKey(c,st,it)])return false;
+  const ov=OVERRIDE[it.id];return !(ov&&ov["IN:"+st.name]!=null);
+}
 function isReal(c,it){const ov=OVERRIDE[it.id];return !!(ov&&ov[c.code]!=null)||["fuel","diesel","gold"].includes(it.cat)||LIVE[it.id]}
 function localPrice(c,st,it){
   {const u=USERP[upKey(c,st,it)];if(u)return u.v}
@@ -463,7 +470,7 @@ function renderPlace(){
       const lp=localPrice(c,st,it);
       if(lp==null) return;
       const conv=shown.filter(cur=>cur!==c.cur).map(cur=>`<span>${fmt(convert(lp,c.cur,cur),cur)}</span>`).join("");
-      html+=`<div class="row" data-id="${it.id}"><div><div class="iname">${it.name}</div><div class="iunit">${it.unit}</div></div><div class="price">${fmt(lp,c.cur)}${(sp=>sp?`<div class="range">usually ${fmt(lp*sp[0],c.cur)}–${fmt(lp*sp[1],c.cur)}</div>`:`<div class="range">${EXACT.has(it.id)&&OVERRIDE[it.id]?.[c.code]!=null?"listed price":"same everywhere"}</div>`)(spread(it))}${(u=>u?`<div class="mine">your price · ${new Date(u.when).toLocaleDateString([], {day:"numeric",month:"short"})}</div>`:"")(USERP[upKey(c,st,it)])||liveTag(it,c)||(isReal(c,it)?"":'<div class="est">rough estimate</div>')}</div>${conv?`<div class="conv">${conv}</div>`:""}<div class="src"><button class="edit" type="button" data-edit="${it.id}">✎ Update price</button><span>Check:</span>${sources(c,st,it).map(([l,u])=>`<a href="${u}" target="_blank" rel="noopener">${l} ↗</a>`).join("")}</div></div>`;
+      html+=`<div class="row" data-id="${it.id}"><div><div class="iname">${it.name}</div><div class="iunit">${it.unit}</div></div><div class="price">${fmt(lp,c.cur)}${(sp=>sp?`<div class="range">usually ${fmt(lp*sp[0],c.cur)}–${fmt(lp*sp[1],c.cur)}</div>`:`<div class="range">${["fuel","diesel"].includes(it.cat)||it.id==="lpg"?(st?"state price":"listed price"):EXACT.has(it.id)&&OVERRIDE[it.id]?.[c.code]!=null?"listed price":"same everywhere"}</div>`)(spread(it))}${(u=>u?`<div class="mine">your price · ${new Date(u.when).toLocaleDateString([], {day:"numeric",month:"short"})}</div>`:"")(USERP[upKey(c,st,it)])||(chennaiFallback(c,st,it)?`<div class="est">Chennai price · may differ in ${esc(st.name.replace(/\s*\(.*\)/,""))}</div>`:"")||liveTag(it,c)||(isReal(c,it)?"":'<div class="est">rough estimate</div>')}</div>${conv?`<div class="conv">${conv}</div>`:""}<div class="src"><button class="edit" type="button" data-edit="${it.id}">✎ Update price</button><span>Check:</span>${sources(c,st,it).map(([l,u])=>`<a href="${u}" target="_blank" rel="noopener">${l} ↗</a>`).join("")}</div></div>`;
     });
   });
   if(q){
@@ -558,7 +565,7 @@ if(!ratesWhen||Date.now()-ratesWhen>12*3600e3){setTimeout(refreshRates,600)}
 
 // ---- Daily live prices (written by the GitHub job into prices.json) ----
 const LIVE={};
-function liveTag(it,c){const d=LIVE[it.id];if(!d){if(c.code==="IN"&&typeof SHOP_IDS!=="undefined"&&SHOP_IDS.has(it.id))return `<div class="shop">Chennai shop · ${new Date(SHOP_WHEN).toLocaleDateString([], {day:"numeric",month:"short"})}</div>`;return""}if(d.india&&c.code!=="IN")return"";
+function liveTag(it,c){const d=LIVE[it.id];if(!d){if(c.code==="IN"&&(!place.state||place.state==="Tamil Nadu (Chennai)")&&typeof SHOP_IDS!=="undefined"&&SHOP_IDS.has(it.id))return `<div class="shop">Chennai shop · ${new Date(SHOP_WHEN).toLocaleDateString([], {day:"numeric",month:"short"})}</div>`;return""}if(d.india&&c.code!=="IN")return"";
   return `<div class="live">● ${d.trend?"market-adjusted":"live"} · ${new Date(d.when).toLocaleDateString([], {day:"numeric",month:"short"})}</div>`}
 async function loadLive(){
   try{
