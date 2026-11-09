@@ -1,318 +1,6 @@
 {
- "note": "Items the weekly Koyambedu check may update. weekly.json holds estimated SHOP prices in rupees for the unit shown (Chennai).",
+ "note": "Items the weekly Koyambedu check updates. Prices in weekly.json are estimated SHOP prices in rupees for the unit shown (Chennai).",
  "items": [
-  {
-   "id": "onion",
-   "name": "Onions",
-   "unit": "1 kg",
-   "also_called": ""
-  },
-  {
-   "id": "tomato",
-   "name": "Tomatoes",
-   "unit": "1 kg",
-   "also_called": ""
-  },
-  {
-   "id": "potato",
-   "name": "Potatoes",
-   "unit": "1 kg",
-   "also_called": ""
-  },
-  {
-   "id": "garlic",
-   "name": "Garlic",
-   "unit": "1 kg",
-   "also_called": ""
-  },
-  {
-   "id": "carrot",
-   "name": "carrot",
-   "unit": "",
-   "also_called": "gajar"
-  },
-  {
-   "id": "beans",
-   "name": "beans",
-   "unit": "",
-   "also_called": ""
-  },
-  {
-   "id": "cabbage",
-   "name": "cabbage",
-   "unit": "",
-   "also_called": ""
-  },
-  {
-   "id": "cauliflower",
-   "name": "cauliflower",
-   "unit": "",
-   "also_called": ""
-  },
-  {
-   "id": "brinjal",
-   "name": "brinjal",
-   "unit": "",
-   "also_called": "eggplant aubergine kathirikai baingan"
-  },
-  {
-   "id": "okra",
-   "name": "okra",
-   "unit": "",
-   "also_called": "bhindi vendakkai"
-  },
-  {
-   "id": "cucumber",
-   "name": "cucumber",
-   "unit": "",
-   "also_called": ""
-  },
-  {
-   "id": "capsicum",
-   "name": "capsicum",
-   "unit": "",
-   "also_called": "bell pepper shimla mirch"
-  },
-  {
-   "id": "chilli",
-   "name": "chilli",
-   "unit": "",
-   "also_called": "chili mirchi"
-  },
-  {
-   "id": "ginger",
-   "name": "ginger",
-   "unit": "",
-   "also_called": "adrak inji"
-  },
-  {
-   "id": "coriander",
-   "name": "coriander",
-   "unit": "",
-   "also_called": "cilantro dhania kothamalli"
-  },
-  {
-   "id": "lemon",
-   "name": "lemon",
-   "unit": "",
-   "also_called": "elumichai nimbu"
-  },
-  {
-   "id": "beetroot",
-   "name": "beetroot",
-   "unit": "",
-   "also_called": ""
-  },
-  {
-   "id": "drumstick",
-   "name": "drumstick",
-   "unit": "",
-   "also_called": "murungakkai moringa"
-  },
-  {
-   "id": "peas",
-   "name": "peas",
-   "unit": "",
-   "also_called": ""
-  },
-  {
-   "id": "pumpkin",
-   "name": "pumpkin",
-   "unit": "",
-   "also_called": ""
-  },
-  {
-   "id": "spinach",
-   "name": "spinach",
-   "unit": "",
-   "also_called": "palak keerai greens"
-  },
-  {
-   "id": "corn",
-   "name": "corn",
-   "unit": "",
-   "also_called": ""
-  },
-  {
-   "id": "mushroom",
-   "name": "mushroom",
-   "unit": "",
-   "also_called": ""
-  },
-  {
-   "id": "sirukeerai",
-   "name": "sirukeerai",
-   "unit": "",
-   "also_called": "sirukeerai keerai greens"
-  },
-  {
-   "id": "mint",
-   "name": "mint",
-   "unit": "",
-   "also_called": "puthina pudina"
-  },
-  {
-   "id": "coconutkg",
-   "name": "coconutkg",
-   "unit": "",
-   "also_called": "thengai nariyal"
-  },
-  {
-   "id": "ootypotato",
-   "name": "ootypotato",
-   "unit": "",
-   "also_called": "potato urulai"
-  },
-  {
-   "id": "smallonion",
-   "name": "smallonion",
-   "unit": "",
-   "also_called": "sambar onion chinna vengayam shallot"
-  },
-  {
-   "id": "radish",
-   "name": "radish",
-   "unit": "",
-   "also_called": "mullangi mooli"
-  },
-  {
-   "id": "chowchow",
-   "name": "chowchow",
-   "unit": "",
-   "also_called": "chow chow chayote bangalore kathirikai"
-  },
-  {
-   "id": "broadbeans",
-   "name": "broadbeans",
-   "unit": "",
-   "also_called": "avarai avarakkai broad beans"
-  },
-  {
-   "id": "bittergourd",
-   "name": "bittergourd",
-   "unit": "",
-   "also_called": "pavakkai paneer pavakkai karela"
-  },
-  {
-   "id": "sweetpotato",
-   "name": "sweetpotato",
-   "unit": "",
-   "also_called": "sakkaravalli kizhangu shakarkandi"
-  },
-  {
-   "id": "clusterbeans",
-   "name": "clusterbeans",
-   "unit": "",
-   "also_called": "kothavarangai guar"
-  },
-  {
-   "id": "taro",
-   "name": "taro",
-   "unit": "",
-   "also_called": "sembu seppankizhangu arbi"
-  },
-  {
-   "id": "yamsmall",
-   "name": "yamsmall",
-   "unit": "",
-   "also_called": "pidi karunai karanai yam"
-  },
-  {
-   "id": "snakegourd",
-   "name": "snakegourd",
-   "unit": "",
-   "also_called": "pudalangai podalangai"
-  },
-  {
-   "id": "bottlegourd",
-   "name": "bottlegourd",
-   "unit": "",
-   "also_called": "sorakkai suraikai lauki"
-  },
-  {
-   "id": "elephantyam",
-   "name": "elephantyam",
-   "unit": "",
-   "also_called": "senai kizhangu suran jimikand"
-  },
-  {
-   "id": "ashgourd",
-   "name": "ashgourd",
-   "unit": "",
-   "also_called": "pusanikai poosani white pumpkin petha"
-  },
-  {
-   "id": "kohlrabi",
-   "name": "kohlrabi",
-   "unit": "",
-   "also_called": "nookal nukkal knolkhol"
-  },
-  {
-   "id": "ivygourd",
-   "name": "ivygourd",
-   "unit": "",
-   "also_called": "kovakkai tindora"
-  },
-  {
-   "id": "ridgegourd",
-   "name": "ridgegourd",
-   "unit": "",
-   "also_called": "peerkangai turai"
-  },
-  {
-   "id": "amla",
-   "name": "amla",
-   "unit": "",
-   "also_called": "nellikai amla"
-  },
-  {
-   "id": "turkeyberry",
-   "name": "turkeyberry",
-   "unit": "",
-   "also_called": "sundakkai"
-  },
-  {
-   "id": "sprouts",
-   "name": "sprouts",
-   "unit": "",
-   "also_called": "mulaikattiya payaru"
-  },
-  {
-   "id": "rawmango",
-   "name": "rawmango",
-   "unit": "",
-   "also_called": "mangai maangai kairi"
-  },
-  {
-   "id": "longbeans",
-   "name": "longbeans",
-   "unit": "",
-   "also_called": "karamani cowpea long beans"
-  },
-  {
-   "id": "bananastem",
-   "name": "bananastem",
-   "unit": "",
-   "also_called": "vazhaithandu vazha thandu"
-  },
-  {
-   "id": "rawbanana",
-   "name": "rawbanana",
-   "unit": "",
-   "also_called": "vazhakkai plantain"
-  },
-  {
-   "id": "bananaflower",
-   "name": "bananaflower",
-   "unit": "",
-   "also_called": "vazhaipoo vazhai poo"
-  },
-  {
-   "id": "tapioca",
-   "name": "tapioca",
-   "unit": "",
-   "also_called": "maravalli kizhangu kappa cassava"
-  },
   {
    "id": "apples",
    "name": "Apples",
@@ -336,6 +24,558 @@
    "name": "Mangoes, in season",
    "unit": "1 kg",
    "also_called": ""
+  },
+  {
+   "id": "tomato",
+   "name": "Tomatoes",
+   "unit": "1 kg",
+   "also_called": ""
+  },
+  {
+   "id": "onion",
+   "name": "Onions",
+   "unit": "1 kg",
+   "also_called": ""
+  },
+  {
+   "id": "potato",
+   "name": "Potatoes",
+   "unit": "1 kg",
+   "also_called": ""
+  },
+  {
+   "id": "garlic",
+   "name": "Garlic",
+   "unit": "1 kg",
+   "also_called": ""
+  },
+  {
+   "id": "carrot",
+   "name": "Carrot",
+   "unit": "1 kg",
+   "also_called": "gajar"
+  },
+  {
+   "id": "spinach",
+   "name": "Spinach (palak / keerai)",
+   "unit": "1 bunch, ~250 g",
+   "also_called": "palak keerai greens"
+  },
+  {
+   "id": "beans",
+   "name": "Green beans",
+   "unit": "1 kg",
+   "also_called": ""
+  },
+  {
+   "id": "cabbage",
+   "name": "Cabbage",
+   "unit": "1 kg",
+   "also_called": ""
+  },
+  {
+   "id": "cauliflower",
+   "name": "Cauliflower",
+   "unit": "1 head",
+   "also_called": ""
+  },
+  {
+   "id": "brinjal",
+   "name": "Brinjal (eggplant)",
+   "unit": "1 kg",
+   "also_called": "eggplant aubergine kathirikai baingan"
+  },
+  {
+   "id": "okra",
+   "name": "Ladies finger (okra / bhindi)",
+   "unit": "1 kg",
+   "also_called": "bhindi vendakkai"
+  },
+  {
+   "id": "cucumber",
+   "name": "Cucumber",
+   "unit": "1 kg",
+   "also_called": ""
+  },
+  {
+   "id": "capsicum",
+   "name": "Capsicum (bell pepper)",
+   "unit": "1 kg",
+   "also_called": "bell pepper shimla mirch"
+  },
+  {
+   "id": "chilli",
+   "name": "Green chilli",
+   "unit": "1 kg",
+   "also_called": "chili mirchi"
+  },
+  {
+   "id": "ginger",
+   "name": "Ginger",
+   "unit": "1 kg",
+   "also_called": "adrak inji"
+  },
+  {
+   "id": "coriander",
+   "name": "Coriander leaves",
+   "unit": "1 bunch",
+   "also_called": "cilantro dhania kothamalli"
+  },
+  {
+   "id": "lemon",
+   "name": "Lemon",
+   "unit": "1",
+   "also_called": "elumichai nimbu"
+  },
+  {
+   "id": "beetroot",
+   "name": "Beetroot",
+   "unit": "1 kg",
+   "also_called": ""
+  },
+  {
+   "id": "drumstick",
+   "name": "Drumstick (moringa)",
+   "unit": "1 kg",
+   "also_called": "murungakkai moringa"
+  },
+  {
+   "id": "peas",
+   "name": "Green peas",
+   "unit": "1 kg",
+   "also_called": ""
+  },
+  {
+   "id": "pumpkin",
+   "name": "Pumpkin",
+   "unit": "1 kg",
+   "also_called": ""
+  },
+  {
+   "id": "mushroom",
+   "name": "Mushrooms",
+   "unit": "200 g pack",
+   "also_called": ""
+  },
+  {
+   "id": "corn",
+   "name": "Sweet corn",
+   "unit": "1 cob",
+   "also_called": ""
+  },
+  {
+   "id": "sirukeerai",
+   "name": "Amaranth greens, small (sirukeerai)",
+   "unit": "1 bunch",
+   "also_called": "sirukeerai keerai greens"
+  },
+  {
+   "id": "mint",
+   "name": "Mint leaves",
+   "unit": "1 bunch",
+   "also_called": "puthina pudina"
+  },
+  {
+   "id": "coconutkg",
+   "name": "Coconut, by weight",
+   "unit": "1 kg",
+   "also_called": "thengai nariyal"
+  },
+  {
+   "id": "ootypotato",
+   "name": "Ooty potato",
+   "unit": "1 kg",
+   "also_called": "potato urulai"
+  },
+  {
+   "id": "smallonion",
+   "name": "Small onion (shallots)",
+   "unit": "1 kg",
+   "also_called": "sambar onion chinna vengayam shallot"
+  },
+  {
+   "id": "radish",
+   "name": "Radish",
+   "unit": "1 kg",
+   "also_called": "mullangi mooli"
+  },
+  {
+   "id": "chowchow",
+   "name": "Chayote (chow chow)",
+   "unit": "1 kg",
+   "also_called": "chow chow chayote bangalore kathirikai"
+  },
+  {
+   "id": "broadbeans",
+   "name": "Flat beans (avarai)",
+   "unit": "1 kg",
+   "also_called": "avarai avarakkai broad beans"
+  },
+  {
+   "id": "bittergourd",
+   "name": "Bitter gourd, small",
+   "unit": "1 kg",
+   "also_called": "pavakkai paneer pavakkai karela"
+  },
+  {
+   "id": "sweetpotato",
+   "name": "Sweet potato",
+   "unit": "1 kg",
+   "also_called": "sakkaravalli kizhangu shakarkandi"
+  },
+  {
+   "id": "clusterbeans",
+   "name": "Cluster beans",
+   "unit": "1 kg",
+   "also_called": "kothavarangai guar"
+  },
+  {
+   "id": "taro",
+   "name": "Taro root (colocasia)",
+   "unit": "1 kg",
+   "also_called": "sembu seppankizhangu arbi"
+  },
+  {
+   "id": "yamsmall",
+   "name": "Yam, small (pidi karunai)",
+   "unit": "1 kg",
+   "also_called": "pidi karunai karanai yam"
+  },
+  {
+   "id": "snakegourd",
+   "name": "Snake gourd",
+   "unit": "1 kg",
+   "also_called": "pudalangai podalangai"
+  },
+  {
+   "id": "bottlegourd",
+   "name": "Bottle gourd",
+   "unit": "1 kg",
+   "also_called": "sorakkai suraikai lauki"
+  },
+  {
+   "id": "elephantyam",
+   "name": "Elephant foot yam",
+   "unit": "1 kg",
+   "also_called": "senai kizhangu suran jimikand"
+  },
+  {
+   "id": "ashgourd",
+   "name": "Ash gourd",
+   "unit": "1 kg",
+   "also_called": "pusanikai poosani white pumpkin petha"
+  },
+  {
+   "id": "kohlrabi",
+   "name": "Knol-khol (kohlrabi)",
+   "unit": "1 kg",
+   "also_called": "nookal nukkal knolkhol"
+  },
+  {
+   "id": "ivygourd",
+   "name": "Ivy gourd",
+   "unit": "1 kg",
+   "also_called": "kovakkai tindora"
+  },
+  {
+   "id": "ridgegourd",
+   "name": "Ridge gourd",
+   "unit": "1 kg",
+   "also_called": "peerkangai turai"
+  },
+  {
+   "id": "amla",
+   "name": "Indian gooseberry (amla)",
+   "unit": "1 kg",
+   "also_called": "nellikai amla"
+  },
+  {
+   "id": "turkeyberry",
+   "name": "Turkey berry",
+   "unit": "1 kg",
+   "also_called": "sundakkai"
+  },
+  {
+   "id": "sprouts",
+   "name": "Sprouts, mixed",
+   "unit": "1 pack",
+   "also_called": "mulaikattiya payaru"
+  },
+  {
+   "id": "rawmango",
+   "name": "Raw mango",
+   "unit": "1 kg",
+   "also_called": "mangai maangai kairi"
+  },
+  {
+   "id": "longbeans",
+   "name": "Yardlong beans (karamani)",
+   "unit": "1 kg",
+   "also_called": "karamani cowpea long beans"
+  },
+  {
+   "id": "bananastem",
+   "name": "Banana stem",
+   "unit": "1 piece",
+   "also_called": "vazhaithandu vazha thandu"
+  },
+  {
+   "id": "rawbanana",
+   "name": "Raw banana (plantain)",
+   "unit": "1 piece",
+   "also_called": "vazhakkai plantain"
+  },
+  {
+   "id": "bananaflower",
+   "name": "Banana flower",
+   "unit": "1 piece",
+   "also_called": "vazhaipoo vazhai poo"
+  },
+  {
+   "id": "tapioca",
+   "name": "Tapioca (cassava)",
+   "unit": "1 kg",
+   "also_called": "maravalli kizhangu kappa cassava"
+  },
+  {
+   "id": "papaya",
+   "name": "Papaya",
+   "unit": "1 kg",
+   "also_called": "pappali papita fruit"
+  },
+  {
+   "id": "pomegranate",
+   "name": "Pomegranate",
+   "unit": "1 kg",
+   "also_called": "mathulai anar fruit"
+  },
+  {
+   "id": "guava",
+   "name": "Guava",
+   "unit": "1 kg",
+   "also_called": "koyya amrood fruit"
+  },
+  {
+   "id": "grapesgreen",
+   "name": "Grapes, green",
+   "unit": "1 kg",
+   "also_called": "thratchai angoor fruit"
+  },
+  {
+   "id": "grapesblack",
+   "name": "Grapes, black",
+   "unit": "1 kg",
+   "also_called": "thratchai angoor kala fruit"
+  },
+  {
+   "id": "watermelon",
+   "name": "Watermelon",
+   "unit": "1 kg",
+   "also_called": "tharpoosani tarbooz fruit"
+  },
+  {
+   "id": "muskmelon",
+   "name": "Muskmelon",
+   "unit": "1 kg",
+   "also_called": "kirni kharbuja cantaloupe fruit"
+  },
+  {
+   "id": "pineapple",
+   "name": "Pineapple",
+   "unit": "1 piece",
+   "also_called": "annasi ananas fruit"
+  },
+  {
+   "id": "sapota",
+   "name": "Sapota (chikoo)",
+   "unit": "1 kg",
+   "also_called": "sapota chikoo sapodilla fruit"
+  },
+  {
+   "id": "custardapple",
+   "name": "Custard apple",
+   "unit": "1 kg",
+   "also_called": "seetha pazham sitaphal sharifa fruit"
+  },
+  {
+   "id": "jackfruit",
+   "name": "Jackfruit, whole",
+   "unit": "1 kg",
+   "also_called": "pala pazham kathal fruit"
+  },
+  {
+   "id": "jackpods",
+   "name": "Jackfruit pods, cleaned",
+   "unit": "250 g",
+   "also_called": "pala chulai fruit"
+  },
+  {
+   "id": "mosambi",
+   "name": "Sweet lime (mosambi)",
+   "unit": "1 kg",
+   "also_called": "sathukudi mosambi sweet lime fruit"
+  },
+  {
+   "id": "pear",
+   "name": "Pear",
+   "unit": "1 kg",
+   "also_called": "berikai nashpati fruit"
+  },
+  {
+   "id": "plum",
+   "name": "Plum",
+   "unit": "1 kg",
+   "also_called": "aloo bukhara fruit"
+  },
+  {
+   "id": "peach",
+   "name": "Peach",
+   "unit": "1 kg",
+   "also_called": "aadu fruit"
+  },
+  {
+   "id": "kiwi",
+   "name": "Kiwi",
+   "unit": "1 piece",
+   "also_called": "kiwi fruit fruit"
+  },
+  {
+   "id": "dragonfruit",
+   "name": "Dragon fruit",
+   "unit": "1 piece",
+   "also_called": "pitaya fruit"
+  },
+  {
+   "id": "avocado",
+   "name": "Avocado",
+   "unit": "1 piece",
+   "also_called": "butter fruit vennai pazham fruit"
+  },
+  {
+   "id": "strawberry",
+   "name": "Strawberries",
+   "unit": "200 g box",
+   "also_called": "strawberry fruit"
+  },
+  {
+   "id": "cherry",
+   "name": "Cherries",
+   "unit": "250 g",
+   "also_called": "cherry fruit"
+  },
+  {
+   "id": "litchi",
+   "name": "Litchi",
+   "unit": "1 kg",
+   "also_called": "lychee lichi fruit"
+  },
+  {
+   "id": "jamun",
+   "name": "Jamun (java plum)",
+   "unit": "1 kg",
+   "also_called": "naval pazham jamun fruit"
+  },
+  {
+   "id": "dates",
+   "name": "Dates",
+   "unit": "500 g",
+   "also_called": "pericham pazham khajur fruit"
+  },
+  {
+   "id": "fig",
+   "name": "Figs, fresh",
+   "unit": "250 g",
+   "also_called": "athi pazham anjeer fruit"
+  },
+  {
+   "id": "starfruit",
+   "name": "Star fruit",
+   "unit": "1 kg",
+   "also_called": "thambaratham kamrakh carambola fruit"
+  },
+  {
+   "id": "woodapple",
+   "name": "Wood apple",
+   "unit": "1 kg",
+   "also_called": "vilam pazham bael fruit"
+  },
+  {
+   "id": "rambutan",
+   "name": "Rambutan",
+   "unit": "1 kg",
+   "also_called": "rambutan fruit"
+  },
+  {
+   "id": "mangosteen",
+   "name": "Mangosteen",
+   "unit": "1 kg",
+   "also_called": "mangustan fruit"
+  },
+  {
+   "id": "passionfruit",
+   "name": "Passion fruit",
+   "unit": "1 kg",
+   "also_called": "passion fruit fruit"
+  },
+  {
+   "id": "blueberry",
+   "name": "Blueberries",
+   "unit": "125 g box",
+   "also_called": "blueberry fruit"
+  },
+  {
+   "id": "ber",
+   "name": "Indian jujube (ber)",
+   "unit": "1 kg",
+   "also_called": "elanthai pazham ber fruit"
+  },
+  {
+   "id": "bananarobusta",
+   "name": "Banana, Robusta (green)",
+   "unit": "1 kg",
+   "also_called": "pachai pazham robusta cavendish fruit"
+  },
+  {
+   "id": "bananapoovan",
+   "name": "Banana, Poovan",
+   "unit": "1 dozen",
+   "also_called": "poovan pazham fruit"
+  },
+  {
+   "id": "bananayelakki",
+   "name": "Banana, small (yelakki)",
+   "unit": "1 kg",
+   "also_called": "yelakki rasthali elaichi banana fruit"
+  },
+  {
+   "id": "bananared",
+   "name": "Banana, red",
+   "unit": "1 kg",
+   "also_called": "sevvazhai red banana fruit"
+  },
+  {
+   "id": "banananendran",
+   "name": "Banana, Nendran",
+   "unit": "1 kg",
+   "also_called": "nendran kerala banana fruit"
+  },
+  {
+   "id": "orangenagpur",
+   "name": "Orange, Nagpur",
+   "unit": "1 kg",
+   "also_called": "orange santra kamala fruit"
+  },
+  {
+   "id": "applekashmir",
+   "name": "Apple, Kashmir / Shimla",
+   "unit": "1 kg",
+   "also_called": "apple seb shimla kashmir fruit"
+  },
+  {
+   "id": "appleimported",
+   "name": "Apple, imported (Washington, NZ)",
+   "unit": "1 kg",
+   "also_called": "apple imported washington fuji fruit"
   }
  ]
 }

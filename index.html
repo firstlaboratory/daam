@@ -616,6 +616,15 @@ async function loadWeekly(){
     const r=await fetch("weekly.json?d="+new Date().toISOString().slice(0,10),{cache:"no-store"});if(!r.ok)return;
     const j=await r.json();if(!j.date||!j.items)return;
     if(store.get("weeklyDate","")!==j.date){const b=store.get("mandiBase",{});Object.keys(j.items).forEach(id=>delete b[id]);store.set("mandiBase",b);store.set("weeklyDate",j.date)}
+    // New items found by the weekly check: {id,name,unit,group,price,also_called}
+    (j.new_items||[]).forEach(n=>{
+      if(!n||!n.id||ITEMS.find(i=>i.id===n.id)||!(n.price>0))return;
+      const group=CAT_ORDER.includes(n.group)?n.group:"Groceries";
+      const cat=group==="Fruits"?"fruit":(Object.keys(CATS).find(k=>CATS[k]===group)||"g");
+      ITEMS.push({id:n.id,name:String(n.name).slice(0,60),unit:String(n.unit||"1 kg").slice(0,30),cat,usd:n.price/BASE_RATES.INR,group});
+      if(n.also_called)SYN[n.id]=String(n.also_called).slice(0,120);
+      j.items[n.id]=n.price;
+    });
     Object.entries(j.items).forEach(([id,v])=>{if(!(v>0)||!ITEMS.find(i=>i.id===id))return;
       SHOP_BASE[id]=v;SHOP_IDS.add(id);OVERRIDE[id]=Object.assign(OVERRIDE[id]||{},{IN:v,["IN:"+TN_KEY]:v})});
     SHOP_WHEN=j.date;
