@@ -422,21 +422,21 @@ function fillPlaceSelects(){
 }
 function renderCats(){
   const box=$("cats");box.innerHTML="";
-  ["All",...CAT_ORDER].forEach(c=>{const b=document.createElement("button");b.type="button";b.className="chip"+(c===cat?" on":"");b.textContent=c;
+  ["All","Live",...CAT_ORDER].forEach(c=>{const b=document.createElement("button");b.type="button";b.className="chip"+(c===cat?" on":"");b.textContent=c==="Live"?"● Live today":c;
     b.addEventListener("click",()=>{cat=c;renderCats();renderPlace()});box.appendChild(b)});
 }
 function renderPlace(){
   const c=countryBy(place.country), st=stateObj(c.code,place.state);
   const q=query.trim().toLowerCase();
   const words=q.split(/\s+/).filter(Boolean).map(w=>w.length>3?w.replace(/(es|s)$/,""):w);
-  const items=ITEMS.filter(it=>{if(cat!=="All"&&it.group!==cat)return false;if(!words.length)return true;
+  const items=ITEMS.filter(it=>{if(cat==="Live"){const d=LIVE[it.id];if(!d||(d.india&&c.code!=="IN"))return false}else if(cat!=="All"&&it.group!==cat)return false;if(!words.length)return true;
     const hay=(it.name+" "+it.group+" "+it.unit+" "+(SYN[it.id]||"")).toLowerCase();return words.every(w=>hay.includes(w))});
   const where = st?`${st.name}, ${c.name}`:c.name;
   let html=`<h2>${where}<small>local: ${c.cur}${["IN","US","DE","AE","CN","RU"].includes(c.code)?" · typical shop prices":" · rough estimates"}</small></h2>`;
-  if(!items.length){html+=`<div class="empty">“${esc(query)}” isn't in the list yet.</div>`}
+  if(!items.length){html+=cat==="Live"&&!q?`<div class="empty">No live prices for this place yet. For India, add your data.gov.in key at the bottom of the page.</div>`:`<div class="empty">“${esc(query)}” isn't in the list yet.</div>`}
   CAT_ORDER.forEach(g=>{
     const rows=items.filter(it=>it.group===g); if(!rows.length) return;
-    if(cat==="All") html+=`<div class="sec">${g}</div>`;
+    if(cat==="All"||cat==="Live") html+=`<div class="sec">${g}</div>`;
     rows.forEach(it=>{
       const lp=localPrice(c,st,it);
       if(lp==null) return;
@@ -557,7 +557,7 @@ function mandiMsg(t,err){const el=$("mandiStatus");el.textContent=t;el.className
 async function fetchMandi(key,{quiet=false}={}){
   if(!key)return;
   if(!quiet)mandiMsg("Fetching today's market prices…");
-  const out={},now=new Date().toISOString();let ok=0,blocked=0,empty=0,badKey=false;
+  const out={},now=new Date().toISOString(),missed=[];let ok=0,blocked=0,empty=0,badKey=false;
   for(const [id,[commodity,markup]] of Object.entries(MANDI_ITEMS)){
     try{
       const u=`https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=${encodeURIComponent(key)}&format=json&limit=1000&filters%5Bcommodity%5D=${encodeURIComponent(commodity)}`;
@@ -567,7 +567,7 @@ async function fetchMandi(key,{quiet=false}={}){
       const by={};
       (j.records||[]).forEach(rec=>{const st=MANDI_STATES[(rec.state||"").trim()];const v=parseFloat(rec.modal_price);if(st&&v>0)(by[st]=by[st]||[]).push(v)});
       const all=Object.values(by).flat();
-      if(!all.length){empty++;continue}
+      if(!all.length){empty++;missed.push(ITEMS.find(i=>i.id===id)?.name||id);continue}
       out[id]={IN:Math.round(median(all)/100*markup*10)/10,updated:now};
       Object.entries(by).forEach(([st,vs])=>out[id][st]=Math.round(median(vs)/100*markup*10)/10);
       ok++;
@@ -577,7 +577,9 @@ async function fetchMandi(key,{quiet=false}={}){
   if(ok){
     const saved=store.get("mandi",{});Object.assign(saved,out);store.set("mandi",saved);store.set("mandiWhen",Date.now());
     applyMandi(saved);renderAll();
-    mandiMsg(`Updated ${ok} items from today's mandi prices${empty?` (${empty} had no trading today)`:""}.`);
+    const names=Object.keys(out).map(id=>ITEMS.find(i=>i.id===id)?.name.replace(/\s*\(.*\)/,"")||id);
+    mandiMsg(`Updated ${ok} of ${Object.keys(MANDI_ITEMS).length} items from today's mandi prices: ${names.join(", ")}.${missed.length?` No trading data today for ${missed.map(n=>n.replace(/\s*\(.*\)/,"")).join(", ")}.`:""} Tap “● Live today” above to see them.`);
+    cat="Live";renderCats();
   }else if(blocked){
     mandiMsg("Couldn't reach data.gov.in from this browser. The site may block apps like this, or you may be offline.",true);
   }else{
