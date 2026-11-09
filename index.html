@@ -88,6 +88,11 @@ select.mini{width:auto;padding:5px 8px;font:500 .82rem var(--mono);border-radius
 .range{font:500 .7rem var(--mono);color:var(--muted);margin-top:2px}
 .lookup{display:flex;flex-direction:column;gap:6px;padding:12px 14px;background:color-mix(in srgb,var(--accent) 12%,transparent);border-top:1px solid var(--line)}
 .live{display:inline-block;margin-top:3px;font:600 .66rem var(--body);letter-spacing:.04em;text-transform:uppercase;color:#1e8a4c}
+.settings{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:10px}
+.settings summary{cursor:pointer;font-weight:600}
+.settings[open] summary{margin-bottom:8px}
+.keyrow{display:flex;gap:8px;flex-wrap:wrap}
+.keyrow input{flex:1 1 220px}
 .empty{padding:24px 14px;color:var(--muted);text-align:center}
 .note{color:var(--muted);font-size:.8rem;line-height:1.5}
 </style>
@@ -135,6 +140,16 @@ select.mini{width:auto;padding:5px 8px;font:500 .82rem var(--mono);border-radius
     <div class="board" id="compareBoard"></div>
   </section>
 
+
+  <details class="settings" id="mandiBox">
+    <summary>Live vegetable &amp; grain prices (India)</summary>
+    <p class="note">Daam can fetch today's government market (mandi) prices straight from your phone. Paste your free data.gov.in API key once. It is saved only on this phone.</p>
+    <div class="keyrow">
+      <input id="mandiKey" type="password" autocomplete="off" placeholder="Paste data.gov.in API key" aria-label="data.gov.in API key">
+      <button class="btn" id="mandiSave" type="button">Save &amp; fetch</button>
+    </div>
+    <div class="stamp" id="mandiStatus" style="text-align:left"></div>
+  </details>
   <p class="note">Each price is the typical price you'd pay at an ordinary shop or provider in that city — not the lowest or highest. The smaller “usually” range shows how much it varies between shops and seasons. Prices are estimated from cost-of-living data, so treat them as a guide, not a quote. Indian fuel, LPG, vehicle and some grocery prices are set individually; vehicles are approximate on-road prices. Home services are labour only, per visit, for a basic job. Items marked “live” are updated every morning: gold and silver from world spot prices, and Indian vegetables, fruit and grains from government market (mandi) prices, converted to a typical shop price. Before you buy, use the links under each item to check today's price. Conversions use the exchange rates shown above; tap Refresh for the latest.</p>
 </div>
 
@@ -505,10 +520,67 @@ async function loadLive(){
       Object.entries(m).forEach(([k,v])=>{if(k==="updated")return;if(k==="IN")o.IN=v;else o["IN:"+k]=v});
       LIVE[id]={when:m.updated,india:true};
     });
-    renderAll();
+    applyMandi(store.get("mandi",{}));renderAll();
   }catch{}
 }
 fillPlaceSelects();fillCompareSelects();renderCats();renderStamp();renderAll();loadLive();
+
+// ---- Mandi prices fetched from the viewer's own phone (data.gov.in blocks servers abroad) ----
+const MANDI_ITEMS={onion:["Onion",1.5],tomato:["Tomato",1.6],potato:["Potato",1.5],garlic:["Garlic",1.4],bananas:["Banana",1.6],apples:["Apple",1.5],
+  rice:["Rice",1.25],dal:["Arhar Dal(Tur Dal)",1.2],atta:["Wheat Atta",1.2],mango:["Mango",1.6],oranges:["Orange",1.6]};
+const MANDI_STATES={"Tamil Nadu":"Tamil Nadu (Chennai)","Maharashtra":"Maharashtra (Mumbai)","Karnataka":"Karnataka (Bengaluru)","NCT of Delhi":"Delhi","Delhi":"Delhi",
+  "Telangana":"Telangana (Hyderabad)","Kerala":"Kerala (Kochi)","West Bengal":"West Bengal (Kolkata)","Gujarat":"Gujarat (Ahmedabad)","Rajasthan":"Rajasthan (Jaipur)",
+  "Uttar Pradesh":"Uttar Pradesh (Lucknow)","Uttrakhand":"Uttarakhand (Dehradun)","Uttarakhand":"Uttarakhand (Dehradun)","Punjab":"Punjab (Chandigarh)","Chandigarh":"Punjab (Chandigarh)"};
+const median=a=>{const b=[...a].sort((x,y)=>x-y),m=b.length>>1;return b.length%2?b[m]:(b[m-1]+b[m])/2};
+function applyMandi(m){
+  Object.entries(m||{}).forEach(([id,v])=>{
+    const o=OVERRIDE[id]=OVERRIDE[id]||{};
+    Object.entries(v).forEach(([k,val])=>{if(k==="updated")return;if(k==="IN")o.IN=val;else o["IN:"+k]=val});
+    LIVE[id]={when:v.updated,india:true};
+  });
+}
+function mandiMsg(t,err){const el=$("mandiStatus");el.textContent=t;el.className="stamp"+(err?" err":"");el.style.textAlign="left"}
+async function fetchMandi(key,{quiet=false}={}){
+  if(!key)return;
+  if(!quiet)mandiMsg("Fetching today's market prices…");
+  const out={},now=new Date().toISOString();let ok=0,blocked=0,empty=0,badKey=false;
+  for(const [id,[commodity,markup]] of Object.entries(MANDI_ITEMS)){
+    try{
+      const u=`https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=${encodeURIComponent(key)}&format=json&limit=1000&filters%5Bcommodity%5D=${encodeURIComponent(commodity)}`;
+      const r=await fetch(u);
+      if(r.status===401||r.status===403){badKey=true;break}
+      const j=await r.json();
+      const by={};
+      (j.records||[]).forEach(rec=>{const st=MANDI_STATES[(rec.state||"").trim()];const v=parseFloat(rec.modal_price);if(st&&v>0)(by[st]=by[st]||[]).push(v)});
+      const all=Object.values(by).flat();
+      if(!all.length){empty++;continue}
+      out[id]={IN:Math.round(median(all)/100*markup*10)/10,updated:now};
+      Object.entries(by).forEach(([st,vs])=>out[id][st]=Math.round(median(vs)/100*markup*10)/10);
+      ok++;
+    }catch{blocked++}
+  }
+  if(badKey){mandiMsg("data.gov.in rejected this key. Check you copied the whole key.",true);return}
+  if(ok){
+    const saved=store.get("mandi",{});Object.assign(saved,out);store.set("mandi",saved);store.set("mandiWhen",Date.now());
+    applyMandi(saved);renderAll();
+    mandiMsg(`Updated ${ok} items from today's mandi prices${empty?` (${empty} had no trading today)`:""}.`);
+  }else if(blocked){
+    mandiMsg("Couldn't reach data.gov.in from this browser. The site may block apps like this, or you may be offline.",true);
+  }else{
+    mandiMsg("No market records today yet. Try again later in the day.",true);
+  }
+}
+(function initMandi(){
+  const key=store.get("mandiKey","");
+  if(key)$("mandiKey").value=key;
+  applyMandi(store.get("mandi",{}));
+  const when=store.get("mandiWhen",0);
+  if(when)mandiMsg("Last fetched "+new Date(when).toLocaleString([], {day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}));
+  $("mandiSave").addEventListener("click",()=>{const k=$("mandiKey").value.trim();if(!k){mandiMsg("Paste your key first.",true);return}
+    store.set("mandiKey",k);fetchMandi(k)});
+  if(key&&Date.now()-when>6*3600e3)setTimeout(()=>fetchMandi(key,{quiet:true}),1500);
+})();
+
 </script>
 
 </body>
