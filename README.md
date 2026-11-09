@@ -9,9 +9,10 @@ Live at **https://firstlaboratory.github.io/daam/**
 - The **Refresh prices** button fetches, straight from the phone:
   - exchange rates (open.er-api.com) and gold/silver spot prices (gold-api.com), no key needed
   - the latest saved prices in `weekly.json` and `prices.json`
-  - today's Indian mandi prices for ~68 vegetables, fruits, grains and sugar from data.gov.in, if a
-    data.gov.in key is saved at the bottom of the page (data.gov.in blocks servers abroad, so this
-    only works from the phone)
+  - today's Indian mandi prices for ~68 vegetables, fruits, grains and sugar from data.gov.in, using a
+    built-in key (`DEFAULT_MANDI_KEY` in `index.html`); a viewer can paste their own key at the bottom
+    of the page if the shared one hits its daily limit. data.gov.in blocks servers abroad, so this
+    only works from the phone.
 - A GitHub Action (`.github/workflows/daam-prices.yml`) also updates rates and gold/silver every morning.
 - Each item links to places to check today's real price before buying.
 

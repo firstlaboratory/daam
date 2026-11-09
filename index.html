@@ -152,9 +152,9 @@ select.mini{width:auto;padding:5px 8px;font:500 .82rem var(--mono);border-radius
 
   <details class="settings" id="mandiBox">
     <summary>Live vegetable &amp; grain prices (India)</summary>
-    <p class="note">Daam can fetch today's government market (mandi) prices straight from your phone. Paste your free data.gov.in API key once. It is saved only on this phone.</p>
+    <p class="note">Daam fetches today's government market (mandi) prices from data.gov.in when you tap Refresh prices. It uses a built-in key shared by everyone. If it hits its daily limit, paste your own free data.gov.in API key here. It is saved only on this phone; clear the box and save to go back to the built-in key.</p>
     <div class="keyrow">
-      <input id="mandiKey" type="password" autocomplete="off" placeholder="Paste data.gov.in API key" aria-label="data.gov.in API key">
+      <input id="mandiKey" type="password" autocomplete="off" placeholder="Optional: your own data.gov.in key" aria-label="data.gov.in API key">
       <button class="btn" id="mandiSave" type="button">Save &amp; fetch</button>
     </div>
     <div class="stamp" id="mandiStatus" style="text-align:left"></div>
@@ -466,7 +466,7 @@ function renderPlace(){
     const hay=(it.name+" "+it.group+" "+it.unit+" "+(SYN[it.id]||"")).toLowerCase();return words.every(w=>hay.includes(w))});
   const where = st?`${st.name}, ${c.name}`:c.name;
   let html=`<h2>${where}<small>local: ${c.cur}${["IN","US","DE","AE","CN","RU"].includes(c.code)?" · typical shop prices":" · rough estimates"}</small></h2>`;
-  if(!items.length){html+=cat==="Live"&&!q?`<div class="empty">No live prices for this place yet. For India, add your data.gov.in key at the bottom of the page.</div>`:`<div class="empty">“${esc(query)}” isn't in the list yet.</div>`}
+  if(!items.length){html+=cat==="Live"&&!q?`<div class="empty">No live prices for this place yet. For India, tap Refresh prices.</div>`:`<div class="empty">“${esc(query)}” isn't in the list yet.</div>`}
   CAT_ORDER.forEach(g=>{
     const rows=items.filter(it=>it.group===g); if(!rows.length) return;
     if(cat==="All"||cat==="Live") html+=`<div class="sec">${g}</div>`;
@@ -549,11 +549,11 @@ async function fetchMetals(){
   return ok;
 }
 // The Refresh button: exchange rates, gold & silver, the latest prices saved in Daam
-// (weekly.json + prices.json), and today's mandi prices if a data.gov.in key is saved.
+// (weekly.json + prices.json), and today's mandi prices from data.gov.in.
 async function refreshAll(){
   const btn=$("refresh");if(btn.disabled)return;
   btn.disabled=true;btn.classList.add("spin");renderStamp("Fetching latest prices…");
-  const key=store.get("mandiKey","");
+  const key=mandiKey();
   try{
     const [rOk,mOk,lOk,wOk]=await Promise.all([refreshRates(true),fetchMetals(),loadLive(),loadWeekly()]);
     const mandi=key?await fetchMandi(key):0;
@@ -564,9 +564,7 @@ async function refreshAll(){
     const t=new Date().toLocaleString([], {day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"});
     let msg=done.length?`Updated ${t}: ${done.join(", ")}.`:"Couldn't reach any price source. Showing saved prices.";
     if(done.length&&failed.length)msg+=` Couldn't reach ${failed.join(", ")}.`;
-    if(!key)msg+=" Add a data.gov.in key at the bottom of the page for live vegetable, fruit & grain prices.";
     renderStamp(msg,!done.length);
-    if(!key)$("mandiBox").open=true;
     renderAll();
   }finally{btn.disabled=false;btn.classList.remove("spin")}
 }
@@ -630,6 +628,10 @@ async function loadLive(){
 fillPlaceSelects();fillCompareSelects();renderCats();renderStamp();renderAll();loadLive();
 
 // ---- Mandi prices fetched from the viewer's own phone (data.gov.in blocks servers abroad) ----
+// Built-in data.gov.in key so live market prices work for everyone without setup.
+// A viewer's own key (saved on their phone) is used instead when present.
+const DEFAULT_MANDI_KEY="579b464db66ec23bdd000001946c9d46db0a4d0c4250297f853cd641";
+const mandiKey=()=>store.get("mandiKey","")||DEFAULT_MANDI_KEY;
 const MANDI_ITEMS={mint:["Mint(Pudina)", 1.6],coriander:["Coriander(Leaves)", 1.6],spinach:["Spinach", 1.6],sirukeerai:["Amaranthus", 1.6],radish:["Raddish", 1.6],chowchow:["Chow Chow", 1.6],bittergourd:["Bitter gourd", 1.6],sweetpotato:["Sweet Potato", 1.6],clusterbeans:["Cluster beans", 1.6],taro:["Colacasia", 1.6],snakegourd:["Snakeguard", 1.6],bottlegourd:["Bottle gourd", 1.6],elephantyam:["Elephant Yam (Suran)", 1.6],ashgourd:["Ashgourd", 1.6],kohlrabi:["Knool Khol", 1.6],ivygourd:["Little gourd (Kundru)", 1.6],ridgegourd:["Ridgeguard(Tori)", 1.6],amla:["Amla(Nelli Kai)", 1.6],tapioca:["Tapioca", 1.6],rawbanana:["Banana - Green", 1.6],longbeans:["Cowpea (Veg)", 1.6],lemon:["Lemon", 1.6],cauliflower:["Cauliflower", 1.6],papaya:["Papaya", 1.5],pomegranate:["Pomegranate", 1.5],guava:["Guava", 1.5],grapesgreen:["Grapes", 1.5],grapesblack:["Grapes", 1.5],watermelon:["Water Melon", 1.5],muskmelon:["Karbuja(Musk Melon)", 1.5],pineapple:["Pineapple", 1.5],sapota:["Chikoos(Sapota)", 1.5],custardapple:["Custard Apple (Sharifa)", 1.5],jackfruit:["Jack Fruit", 1.5],mosambi:["Mousambi(Sweet Lime)", 1.5],pear:["Pear(Marasebu)", 1.5],plum:["Plum", 1.5],kiwi:["Kiwi Fruit", 1.5],dragonfruit:["Dragon Fruit", 1.5],litchi:["Litchi", 1.5],jamun:["Jamun(Narale Hannu)", 1.5],ber:["Ber(Zizyphus/Borehannu)", 1.5],carrot:["Carrot", 1.6],beans:["Beans", 1.6],cabbage:["Cabbage", 1.6],brinjal:["Brinjal", 1.6],okra:["Bhindi(Ladies Finger)", 1.6],cucumber:["Cucumbar(Kheera)", 1.6],capsicum:["Capsicum", 1.6],chilli:["Green Chilli", 1.6],ginger:["Ginger(Green)", 1.6],beetroot:["Beetroot", 1.6],drumstick:["Drumstick", 1.6],peas:["Green Peas", 1.6],pumpkin:["Pumpkin", 1.6],onion:["Onion",1.5],tomato:["Tomato",1.6],potato:["Potato",1.5],garlic:["Garlic",1.4],bananas:["Banana",1.6],apples:["Apple",1.5],sugar:["Sugar",1.1],mushroom:["Mashrooms",1.4],
   rice:["Rice",1.25],dal:["Arhar Dal(Tur Dal)",1.2],atta:["Wheat Atta",1.2],mango:["Mango",1.6],oranges:["Orange",1.6]};
 const MANDI_STATES={"Tamil Nadu":"Tamil Nadu (Chennai)","Maharashtra":"Maharashtra (Mumbai)","Karnataka":"Karnataka (Bengaluru)","NCT of Delhi":"Delhi","Delhi":"Delhi",
@@ -714,7 +716,7 @@ async function fetchMandi(key,{quiet=false,show=false}={}){
   // A few requests at a time so a phone on mobile data isn't flooded.
   const list=Object.entries(MANDI_ITEMS);
   for(let i=0;i<list.length;i+=6)await Promise.all(list.slice(i,i+6).map(one));
-  if(badKey){mandiMsg("data.gov.in rejected this key. Check you copied the whole key.",true);return -1}
+  if(badKey){mandiMsg(key===DEFAULT_MANDI_KEY?"data.gov.in refused the built-in key (it may have hit today's limit). Paste your own free key below to keep going.":"data.gov.in rejected this key. Check you copied the whole key, or clear the box and save to use the built-in key.",true);if(key===DEFAULT_MANDI_KEY)$("mandiBox").open=true;return -1}
   if(ok){
     const saved=store.get("mandi",{});Object.assign(saved,out);store.set("mandi",saved);store.set("mandiWhen",Date.now());
     applyMandi(saved);renderAll();
@@ -730,14 +732,15 @@ async function fetchMandi(key,{quiet=false,show=false}={}){
   return 0;
 }
 (function initMandi(){
-  const key=store.get("mandiKey","");
-  if(key)$("mandiKey").value=key;
+  const own=store.get("mandiKey",""),key=mandiKey();
+  if(own)$("mandiKey").value=own;
   applyMandi(store.get("mandi",{}));
   const when=store.get("mandiWhen",0);
   if(when)mandiMsg("Last fetched "+new Date(when).toLocaleString([], {day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}));
-  $("mandiSave").addEventListener("click",()=>{const k=$("mandiKey").value.trim();if(!k){mandiMsg("Paste your key first.",true);return}
-    store.set("mandiKey",k);fetchMandi(k,{show:true})});
-  if(key&&Date.now()-when>6*3600e3)setTimeout(()=>fetchMandi(key,{quiet:true}),1500);
+  $("mandiSave").addEventListener("click",()=>{const k=$("mandiKey").value.trim();
+    if(k)store.set("mandiKey",k);else{try{localStorage.removeItem("daam:mandiKey")}catch{}}
+    fetchMandi(mandiKey(),{show:true})});
+  if(Date.now()-when>6*3600e3)setTimeout(()=>fetchMandi(key,{quiet:true}),1500);
   loadWeekly();
 })();
 
