@@ -1,587 +1,2652 @@
 {
- "note": "Items the weekly Koyambedu check updates. Prices in weekly.json are estimated SHOP prices in rupees for the unit shown (Chennai).",
+ "note": "Items the weekly check updates (Chennai/India prices in rupees for the unit shown). check=weekly: look for a fresh price every run (vegetables, fruits, greens from Koyambedu; staples, milk, meat, fuel, LPG). check=rotate: slow-changing items; each run re-checks the ~40 with the oldest date in weekly.json 'updated'. Gold and silver are not listed: the daily GitHub Action updates them.",
  "items": [
   {
    "id": "apples",
    "name": "Apples",
    "unit": "1 kg",
-   "also_called": ""
+   "also_called": "",
+   "check": "weekly"
   },
   {
    "id": "bananas",
    "name": "Bananas",
    "unit": "1 kg",
-   "also_called": ""
+   "also_called": "",
+   "check": "weekly"
   },
   {
    "id": "oranges",
    "name": "Oranges",
    "unit": "1 kg",
-   "also_called": ""
+   "also_called": "",
+   "check": "weekly"
   },
   {
    "id": "mango",
    "name": "Mangoes, in season",
    "unit": "1 kg",
-   "also_called": ""
+   "also_called": "",
+   "check": "weekly"
   },
   {
    "id": "tomato",
    "name": "Tomatoes",
    "unit": "1 kg",
-   "also_called": ""
+   "also_called": "",
+   "check": "weekly"
   },
   {
    "id": "onion",
    "name": "Onions",
    "unit": "1 kg",
-   "also_called": ""
+   "also_called": "",
+   "check": "weekly"
   },
   {
    "id": "potato",
    "name": "Potatoes",
    "unit": "1 kg",
-   "also_called": ""
+   "also_called": "",
+   "check": "weekly"
   },
   {
    "id": "garlic",
    "name": "Garlic",
    "unit": "1 kg",
-   "also_called": ""
+   "also_called": "",
+   "check": "weekly"
   },
   {
    "id": "carrot",
    "name": "Carrot",
    "unit": "1 kg",
-   "also_called": "gajar"
+   "also_called": "gajar",
+   "check": "weekly"
   },
   {
    "id": "spinach",
    "name": "Spinach (palak / keerai)",
    "unit": "1 bunch, ~250 g",
-   "also_called": "palak keerai greens"
+   "also_called": "palak keerai greens",
+   "check": "weekly"
   },
   {
    "id": "beans",
    "name": "Green beans",
    "unit": "1 kg",
-   "also_called": ""
+   "also_called": "",
+   "check": "weekly"
   },
   {
    "id": "cabbage",
    "name": "Cabbage",
    "unit": "1 kg",
-   "also_called": ""
+   "also_called": "",
+   "check": "weekly"
   },
   {
    "id": "cauliflower",
    "name": "Cauliflower",
    "unit": "1 head",
-   "also_called": ""
+   "also_called": "",
+   "check": "weekly"
   },
   {
    "id": "brinjal",
    "name": "Brinjal (eggplant)",
    "unit": "1 kg",
-   "also_called": "eggplant aubergine kathirikai baingan"
+   "also_called": "eggplant aubergine kathirikai baingan",
+   "check": "weekly"
   },
   {
    "id": "okra",
    "name": "Ladies finger (okra / bhindi)",
    "unit": "1 kg",
-   "also_called": "bhindi vendakkai"
+   "also_called": "bhindi vendakkai",
+   "check": "weekly"
   },
   {
    "id": "cucumber",
    "name": "Cucumber",
    "unit": "1 kg",
-   "also_called": ""
+   "also_called": "",
+   "check": "weekly"
   },
   {
    "id": "capsicum",
    "name": "Capsicum (bell pepper)",
    "unit": "1 kg",
-   "also_called": "bell pepper shimla mirch"
+   "also_called": "bell pepper shimla mirch",
+   "check": "weekly"
   },
   {
    "id": "chilli",
    "name": "Green chilli",
    "unit": "1 kg",
-   "also_called": "chili mirchi"
+   "also_called": "chili mirchi",
+   "check": "weekly"
   },
   {
    "id": "ginger",
    "name": "Ginger",
    "unit": "1 kg",
-   "also_called": "adrak inji"
+   "also_called": "adrak inji",
+   "check": "weekly"
   },
   {
    "id": "coriander",
    "name": "Coriander leaves",
    "unit": "1 bunch",
-   "also_called": "cilantro dhania kothamalli"
+   "also_called": "cilantro dhania kothamalli",
+   "check": "weekly"
   },
   {
    "id": "lemon",
    "name": "Lemon",
    "unit": "1",
-   "also_called": "elumichai nimbu"
+   "also_called": "elumichai nimbu",
+   "check": "weekly"
   },
   {
    "id": "beetroot",
    "name": "Beetroot",
    "unit": "1 kg",
-   "also_called": ""
+   "also_called": "",
+   "check": "weekly"
   },
   {
    "id": "drumstick",
    "name": "Drumstick (moringa)",
    "unit": "1 kg",
-   "also_called": "murungakkai moringa"
+   "also_called": "murungakkai moringa",
+   "check": "weekly"
   },
   {
    "id": "peas",
    "name": "Green peas",
    "unit": "1 kg",
-   "also_called": ""
+   "also_called": "",
+   "check": "weekly"
   },
   {
    "id": "pumpkin",
    "name": "Pumpkin",
    "unit": "1 kg",
-   "also_called": ""
+   "also_called": "",
+   "check": "weekly"
   },
   {
    "id": "mushroom",
    "name": "Mushrooms",
    "unit": "200 g pack",
-   "also_called": ""
+   "also_called": "",
+   "check": "weekly"
   },
   {
    "id": "corn",
    "name": "Sweet corn",
    "unit": "1 cob",
-   "also_called": ""
+   "also_called": "",
+   "check": "weekly"
   },
   {
    "id": "sirukeerai",
    "name": "Amaranth greens, small (sirukeerai)",
    "unit": "1 bunch",
-   "also_called": "sirukeerai keerai greens"
+   "also_called": "sirukeerai keerai greens",
+   "check": "weekly"
   },
   {
    "id": "mint",
    "name": "Mint leaves",
    "unit": "1 bunch",
-   "also_called": "puthina pudina"
+   "also_called": "puthina pudina",
+   "check": "weekly"
   },
   {
    "id": "coconutkg",
    "name": "Coconut, by weight",
    "unit": "1 kg",
-   "also_called": "thengai nariyal"
+   "also_called": "thengai nariyal",
+   "check": "weekly"
   },
   {
    "id": "ootypotato",
    "name": "Ooty potato",
    "unit": "1 kg",
-   "also_called": "potato urulai"
+   "also_called": "potato urulai",
+   "check": "weekly"
   },
   {
    "id": "smallonion",
    "name": "Small onion (shallots)",
    "unit": "1 kg",
-   "also_called": "sambar onion chinna vengayam shallot"
+   "also_called": "sambar onion chinna vengayam shallot",
+   "check": "weekly"
   },
   {
    "id": "radish",
    "name": "Radish",
    "unit": "1 kg",
-   "also_called": "mullangi mooli"
+   "also_called": "mullangi mooli",
+   "check": "weekly"
   },
   {
    "id": "chowchow",
    "name": "Chayote (chow chow)",
    "unit": "1 kg",
-   "also_called": "chow chow chayote bangalore kathirikai"
+   "also_called": "chow chow chayote bangalore kathirikai",
+   "check": "weekly"
   },
   {
    "id": "broadbeans",
    "name": "Flat beans (avarai)",
    "unit": "1 kg",
-   "also_called": "avarai avarakkai broad beans"
+   "also_called": "avarai avarakkai broad beans",
+   "check": "weekly"
   },
   {
    "id": "bittergourd",
    "name": "Bitter gourd, small",
    "unit": "1 kg",
-   "also_called": "pavakkai paneer pavakkai karela"
+   "also_called": "pavakkai paneer pavakkai karela",
+   "check": "weekly"
   },
   {
    "id": "sweetpotato",
    "name": "Sweet potato",
    "unit": "1 kg",
-   "also_called": "sakkaravalli kizhangu shakarkandi"
+   "also_called": "sakkaravalli kizhangu shakarkandi",
+   "check": "weekly"
   },
   {
    "id": "clusterbeans",
    "name": "Cluster beans",
    "unit": "1 kg",
-   "also_called": "kothavarangai guar"
+   "also_called": "kothavarangai guar",
+   "check": "weekly"
   },
   {
    "id": "taro",
    "name": "Taro root (colocasia)",
    "unit": "1 kg",
-   "also_called": "sembu seppankizhangu arbi"
+   "also_called": "sembu seppankizhangu arbi",
+   "check": "weekly"
   },
   {
    "id": "yamsmall",
    "name": "Yam, small (pidi karunai)",
    "unit": "1 kg",
-   "also_called": "pidi karunai karanai yam"
+   "also_called": "pidi karunai karanai yam",
+   "check": "weekly"
   },
   {
    "id": "snakegourd",
    "name": "Snake gourd",
    "unit": "1 kg",
-   "also_called": "pudalangai podalangai"
+   "also_called": "pudalangai podalangai",
+   "check": "weekly"
   },
   {
    "id": "bottlegourd",
    "name": "Bottle gourd",
    "unit": "1 kg",
-   "also_called": "sorakkai suraikai lauki"
+   "also_called": "sorakkai suraikai lauki",
+   "check": "weekly"
   },
   {
    "id": "elephantyam",
    "name": "Elephant foot yam",
    "unit": "1 kg",
-   "also_called": "senai kizhangu suran jimikand"
+   "also_called": "senai kizhangu suran jimikand",
+   "check": "weekly"
   },
   {
    "id": "ashgourd",
    "name": "Ash gourd",
    "unit": "1 kg",
-   "also_called": "pusanikai poosani white pumpkin petha"
+   "also_called": "pusanikai poosani white pumpkin petha",
+   "check": "weekly"
   },
   {
    "id": "kohlrabi",
    "name": "Knol-khol (kohlrabi)",
    "unit": "1 kg",
-   "also_called": "nookal nukkal knolkhol"
+   "also_called": "nookal nukkal knolkhol",
+   "check": "weekly"
   },
   {
    "id": "ivygourd",
    "name": "Ivy gourd",
    "unit": "1 kg",
-   "also_called": "kovakkai tindora"
+   "also_called": "kovakkai tindora",
+   "check": "weekly"
   },
   {
    "id": "ridgegourd",
    "name": "Ridge gourd",
    "unit": "1 kg",
-   "also_called": "peerkangai turai"
+   "also_called": "peerkangai turai",
+   "check": "weekly"
   },
   {
    "id": "amla",
    "name": "Indian gooseberry (amla)",
    "unit": "1 kg",
-   "also_called": "nellikai amla"
+   "also_called": "nellikai amla",
+   "check": "weekly"
   },
   {
    "id": "turkeyberry",
    "name": "Turkey berry",
    "unit": "1 kg",
-   "also_called": "sundakkai"
+   "also_called": "sundakkai",
+   "check": "weekly"
   },
   {
    "id": "sprouts",
    "name": "Sprouts, mixed",
    "unit": "1 pack",
-   "also_called": "mulaikattiya payaru"
+   "also_called": "mulaikattiya payaru",
+   "check": "weekly"
   },
   {
    "id": "rawmango",
    "name": "Raw mango",
    "unit": "1 kg",
-   "also_called": "mangai maangai kairi"
+   "also_called": "mangai maangai kairi",
+   "check": "weekly"
   },
   {
    "id": "longbeans",
    "name": "Yardlong beans (karamani)",
    "unit": "1 kg",
-   "also_called": "karamani cowpea long beans"
+   "also_called": "karamani cowpea long beans",
+   "check": "weekly"
   },
   {
    "id": "bananastem",
    "name": "Banana stem",
    "unit": "1 piece",
-   "also_called": "vazhaithandu vazha thandu"
+   "also_called": "vazhaithandu vazha thandu",
+   "check": "weekly"
   },
   {
    "id": "rawbanana",
    "name": "Raw banana (plantain)",
    "unit": "1 piece",
-   "also_called": "vazhakkai plantain"
+   "also_called": "vazhakkai plantain",
+   "check": "weekly"
   },
   {
    "id": "bananaflower",
    "name": "Banana flower",
    "unit": "1 piece",
-   "also_called": "vazhaipoo vazhai poo"
+   "also_called": "vazhaipoo vazhai poo",
+   "check": "weekly"
   },
   {
    "id": "tapioca",
    "name": "Tapioca (cassava)",
    "unit": "1 kg",
-   "also_called": "maravalli kizhangu kappa cassava"
+   "also_called": "maravalli kizhangu kappa cassava",
+   "check": "weekly"
   },
   {
    "id": "papaya",
    "name": "Papaya",
    "unit": "1 kg",
-   "also_called": "pappali papita fruit"
+   "also_called": "pappali papita fruit",
+   "check": "weekly"
   },
   {
    "id": "pomegranate",
    "name": "Pomegranate",
    "unit": "1 kg",
-   "also_called": "mathulai anar fruit"
+   "also_called": "mathulai anar fruit",
+   "check": "weekly"
   },
   {
    "id": "guava",
    "name": "Guava",
    "unit": "1 kg",
-   "also_called": "koyya amrood fruit"
+   "also_called": "koyya amrood fruit",
+   "check": "weekly"
   },
   {
    "id": "grapesgreen",
    "name": "Grapes, green",
    "unit": "1 kg",
-   "also_called": "thratchai angoor fruit"
+   "also_called": "thratchai angoor fruit",
+   "check": "weekly"
   },
   {
    "id": "grapesblack",
    "name": "Grapes, black",
    "unit": "1 kg",
-   "also_called": "thratchai angoor kala fruit"
+   "also_called": "thratchai angoor kala fruit",
+   "check": "weekly"
   },
   {
    "id": "watermelon",
    "name": "Watermelon",
    "unit": "1 kg",
-   "also_called": "tharpoosani tarbooz fruit"
+   "also_called": "tharpoosani tarbooz fruit",
+   "check": "weekly"
   },
   {
    "id": "muskmelon",
    "name": "Muskmelon",
    "unit": "1 kg",
-   "also_called": "kirni kharbuja cantaloupe fruit"
+   "also_called": "kirni kharbuja cantaloupe fruit",
+   "check": "weekly"
   },
   {
    "id": "pineapple",
    "name": "Pineapple",
    "unit": "1 piece",
-   "also_called": "annasi ananas fruit"
+   "also_called": "annasi ananas fruit",
+   "check": "weekly"
   },
   {
    "id": "sapota",
    "name": "Sapota (chikoo)",
    "unit": "1 kg",
-   "also_called": "sapota chikoo sapodilla fruit"
+   "also_called": "sapota chikoo sapodilla fruit",
+   "check": "weekly"
   },
   {
    "id": "custardapple",
    "name": "Custard apple",
    "unit": "1 kg",
-   "also_called": "seetha pazham sitaphal sharifa fruit"
+   "also_called": "seetha pazham sitaphal sharifa fruit",
+   "check": "weekly"
   },
   {
    "id": "jackfruit",
    "name": "Jackfruit, whole",
    "unit": "1 kg",
-   "also_called": "pala pazham kathal fruit"
+   "also_called": "pala pazham kathal fruit",
+   "check": "weekly"
   },
   {
    "id": "jackpods",
    "name": "Jackfruit pods, cleaned",
    "unit": "250 g",
-   "also_called": "pala chulai fruit"
+   "also_called": "pala chulai fruit",
+   "check": "weekly"
   },
   {
    "id": "mosambi",
    "name": "Sweet lime (mosambi)",
    "unit": "1 kg",
-   "also_called": "sathukudi mosambi sweet lime fruit"
+   "also_called": "sathukudi mosambi sweet lime fruit",
+   "check": "weekly"
   },
   {
    "id": "pear",
    "name": "Pear",
    "unit": "1 kg",
-   "also_called": "berikai nashpati fruit"
+   "also_called": "berikai nashpati fruit",
+   "check": "weekly"
   },
   {
    "id": "plum",
    "name": "Plum",
    "unit": "1 kg",
-   "also_called": "aloo bukhara fruit"
+   "also_called": "aloo bukhara fruit",
+   "check": "weekly"
   },
   {
    "id": "peach",
    "name": "Peach",
    "unit": "1 kg",
-   "also_called": "aadu fruit"
+   "also_called": "aadu fruit",
+   "check": "weekly"
   },
   {
    "id": "kiwi",
    "name": "Kiwi",
    "unit": "1 piece",
-   "also_called": "kiwi fruit fruit"
+   "also_called": "kiwi fruit fruit",
+   "check": "weekly"
   },
   {
    "id": "dragonfruit",
    "name": "Dragon fruit",
    "unit": "1 piece",
-   "also_called": "pitaya fruit"
+   "also_called": "pitaya fruit",
+   "check": "weekly"
   },
   {
    "id": "avocado",
    "name": "Avocado",
    "unit": "1 piece",
-   "also_called": "butter fruit vennai pazham fruit"
+   "also_called": "butter fruit vennai pazham fruit",
+   "check": "weekly"
   },
   {
    "id": "strawberry",
    "name": "Strawberries",
    "unit": "200 g box",
-   "also_called": "strawberry fruit"
+   "also_called": "strawberry fruit",
+   "check": "weekly"
   },
   {
    "id": "cherry",
    "name": "Cherries",
    "unit": "250 g",
-   "also_called": "cherry fruit"
+   "also_called": "cherry fruit",
+   "check": "weekly"
   },
   {
    "id": "litchi",
    "name": "Litchi",
    "unit": "1 kg",
-   "also_called": "lychee lichi fruit"
+   "also_called": "lychee lichi fruit",
+   "check": "weekly"
   },
   {
    "id": "jamun",
    "name": "Jamun (java plum)",
    "unit": "1 kg",
-   "also_called": "naval pazham jamun fruit"
+   "also_called": "naval pazham jamun fruit",
+   "check": "weekly"
   },
   {
    "id": "dates",
    "name": "Dates",
    "unit": "500 g",
-   "also_called": "pericham pazham khajur fruit"
+   "also_called": "pericham pazham khajur fruit",
+   "check": "weekly"
   },
   {
    "id": "fig",
    "name": "Figs, fresh",
    "unit": "250 g",
-   "also_called": "athi pazham anjeer fruit"
+   "also_called": "athi pazham anjeer fruit",
+   "check": "weekly"
   },
   {
    "id": "starfruit",
    "name": "Star fruit",
    "unit": "1 kg",
-   "also_called": "thambaratham kamrakh carambola fruit"
+   "also_called": "thambaratham kamrakh carambola fruit",
+   "check": "weekly"
   },
   {
    "id": "woodapple",
    "name": "Wood apple",
    "unit": "1 kg",
-   "also_called": "vilam pazham bael fruit"
+   "also_called": "vilam pazham bael fruit",
+   "check": "weekly"
   },
   {
    "id": "rambutan",
    "name": "Rambutan",
    "unit": "1 kg",
-   "also_called": "rambutan fruit"
+   "also_called": "rambutan fruit",
+   "check": "weekly"
   },
   {
    "id": "mangosteen",
    "name": "Mangosteen",
    "unit": "1 kg",
-   "also_called": "mangustan fruit"
+   "also_called": "mangustan fruit",
+   "check": "weekly"
   },
   {
    "id": "passionfruit",
    "name": "Passion fruit",
    "unit": "1 kg",
-   "also_called": "passion fruit fruit"
+   "also_called": "passion fruit fruit",
+   "check": "weekly"
   },
   {
    "id": "blueberry",
    "name": "Blueberries",
    "unit": "125 g box",
-   "also_called": "blueberry fruit"
+   "also_called": "blueberry fruit",
+   "check": "weekly"
   },
   {
    "id": "ber",
    "name": "Indian jujube (ber)",
    "unit": "1 kg",
-   "also_called": "elanthai pazham ber fruit"
+   "also_called": "elanthai pazham ber fruit",
+   "check": "weekly"
   },
   {
    "id": "bananarobusta",
    "name": "Banana, Robusta (green)",
    "unit": "1 kg",
-   "also_called": "pachai pazham robusta cavendish fruit"
+   "also_called": "pachai pazham robusta cavendish fruit",
+   "check": "weekly"
   },
   {
    "id": "bananapoovan",
    "name": "Banana, Poovan",
    "unit": "1 dozen",
-   "also_called": "poovan pazham fruit"
+   "also_called": "poovan pazham fruit",
+   "check": "weekly"
   },
   {
    "id": "bananayelakki",
    "name": "Banana, small (yelakki)",
    "unit": "1 kg",
-   "also_called": "yelakki rasthali elaichi banana fruit"
+   "also_called": "yelakki rasthali elaichi banana fruit",
+   "check": "weekly"
   },
   {
    "id": "bananared",
    "name": "Banana, red",
    "unit": "1 kg",
-   "also_called": "sevvazhai red banana fruit"
+   "also_called": "sevvazhai red banana fruit",
+   "check": "weekly"
   },
   {
    "id": "banananendran",
    "name": "Banana, Nendran",
    "unit": "1 kg",
-   "also_called": "nendran kerala banana fruit"
+   "also_called": "nendran kerala banana fruit",
+   "check": "weekly"
   },
   {
    "id": "orangenagpur",
    "name": "Orange, Nagpur",
    "unit": "1 kg",
-   "also_called": "orange santra kamala fruit"
+   "also_called": "orange santra kamala fruit",
+   "check": "weekly"
   },
   {
    "id": "applekashmir",
    "name": "Apple, Kashmir / Shimla",
    "unit": "1 kg",
-   "also_called": "apple seb shimla kashmir fruit"
+   "also_called": "apple seb shimla kashmir fruit",
+   "check": "weekly"
   },
   {
    "id": "appleimported",
    "name": "Apple, imported (Washington, NZ)",
    "unit": "1 kg",
-   "also_called": "apple imported washington fuji fruit"
+   "also_called": "apple imported washington fuji fruit",
+   "check": "weekly"
   },
   {
    "id": "curryleaves",
    "name": "Curry leaves (karuveppilai)",
    "unit": "100 g",
-   "also_called": "karuveppilai kariveppila kadi patta curry leaf"
+   "also_called": "karuveppilai kariveppila kadi patta curry leaf",
+   "check": "weekly"
+  },
+  {
+   "id": "milk",
+   "name": "Milk",
+   "unit": "1 litre",
+   "group": "Groceries",
+   "check": "weekly",
+   "also_called": ""
+  },
+  {
+   "id": "bread",
+   "name": "Bread",
+   "unit": "500 g loaf",
+   "group": "Groceries",
+   "check": "weekly",
+   "also_called": ""
+  },
+  {
+   "id": "rice",
+   "name": "Rice, everyday",
+   "unit": "1 kg",
+   "group": "Groceries",
+   "check": "weekly",
+   "also_called": ""
+  },
+  {
+   "id": "atta",
+   "name": "Wheat flour (atta)",
+   "unit": "1 kg",
+   "group": "Groceries",
+   "check": "weekly",
+   "also_called": ""
+  },
+  {
+   "id": "dal",
+   "name": "Lentils (toor dal)",
+   "unit": "1 kg",
+   "group": "Groceries",
+   "check": "weekly",
+   "also_called": ""
+  },
+  {
+   "id": "eggs",
+   "name": "Eggs",
+   "unit": "12",
+   "group": "Groceries",
+   "check": "weekly",
+   "also_called": ""
+  },
+  {
+   "id": "chicken",
+   "name": "Chicken",
+   "unit": "1 kg",
+   "group": "Groceries",
+   "check": "weekly",
+   "also_called": ""
+  },
+  {
+   "id": "mutton",
+   "name": "Mutton / lamb",
+   "unit": "1 kg",
+   "group": "Groceries",
+   "check": "weekly",
+   "also_called": ""
+  },
+  {
+   "id": "fish",
+   "name": "Fish, local",
+   "unit": "1 kg",
+   "group": "Groceries",
+   "check": "weekly",
+   "also_called": ""
+  },
+  {
+   "id": "paneer",
+   "name": "Paneer / fresh cheese",
+   "unit": "1 kg",
+   "group": "Groceries",
+   "check": "weekly",
+   "also_called": ""
+  },
+  {
+   "id": "butter",
+   "name": "Butter",
+   "unit": "500 g",
+   "group": "Groceries",
+   "check": "weekly",
+   "also_called": ""
+  },
+  {
+   "id": "curd",
+   "name": "Curd / yogurt",
+   "unit": "500 g",
+   "group": "Groceries",
+   "check": "weekly",
+   "also_called": ""
+  },
+  {
+   "id": "oil",
+   "name": "Cooking oil",
+   "unit": "1 litre",
+   "group": "Groceries",
+   "check": "weekly",
+   "also_called": ""
+  },
+  {
+   "id": "sugar",
+   "name": "Sugar",
+   "unit": "1 kg",
+   "group": "Groceries",
+   "check": "weekly",
+   "also_called": ""
+  },
+  {
+   "id": "salt",
+   "name": "Salt",
+   "unit": "1 kg",
+   "group": "Groceries",
+   "check": "weekly",
+   "also_called": ""
+  },
+  {
+   "id": "tea",
+   "name": "Tea leaves",
+   "unit": "250 g",
+   "group": "Groceries",
+   "check": "weekly",
+   "also_called": ""
+  },
+  {
+   "id": "coffeep",
+   "name": "Coffee powder",
+   "unit": "250 g",
+   "group": "Groceries",
+   "check": "weekly",
+   "also_called": ""
+  },
+  {
+   "id": "water",
+   "name": "Bottled water",
+   "unit": "1.5 litre",
+   "group": "Groceries",
+   "check": "weekly",
+   "also_called": ""
+  },
+  {
+   "id": "soap",
+   "name": "Bath soap",
+   "unit": "100 g bar",
+   "group": "Daily essentials",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "paste",
+   "name": "Toothpaste",
+   "unit": "100 g",
+   "group": "Daily essentials",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "shampoo",
+   "name": "Shampoo",
+   "unit": "400 ml",
+   "group": "Daily essentials",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "detergent",
+   "name": "Washing powder",
+   "unit": "1 kg",
+   "group": "Daily essentials",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "tissue",
+   "name": "Toilet paper",
+   "unit": "4 rolls",
+   "group": "Daily essentials",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "lpg",
+   "name": "Cooking gas cylinder (LPG)",
+   "unit": "14.2 kg refill",
+   "group": "Daily essentials",
+   "check": "weekly",
+   "also_called": ""
+  },
+  {
+   "id": "meal",
+   "name": "Meal, simple restaurant",
+   "unit": "1 person",
+   "group": "Eating out & leisure",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "dinner",
+   "name": "Dinner, mid-range restaurant",
+   "unit": "2 people, 3 courses",
+   "group": "Eating out & leisure",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "fastfood",
+   "name": "Fast-food combo meal",
+   "unit": "1 person",
+   "group": "Eating out & leisure",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "street",
+   "name": "Street food snack",
+   "unit": "1 plate",
+   "group": "Eating out & leisure",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "pizza",
+   "name": "Pizza, medium, delivered",
+   "unit": "1",
+   "group": "Eating out & leisure",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "coffee",
+   "name": "Cappuccino at a café",
+   "unit": "1 cup",
+   "group": "Eating out & leisure",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "chai",
+   "name": "Tea at a stall / café",
+   "unit": "1 cup",
+   "group": "Eating out & leisure",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "soda",
+   "name": "Soft drink",
+   "unit": "330 ml can",
+   "group": "Eating out & leisure",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "beer",
+   "name": "Beer at a bar",
+   "unit": "0.5 litre",
+   "group": "Eating out & leisure",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "movie",
+   "name": "Cinema ticket",
+   "unit": "1 seat",
+   "group": "Eating out & leisure",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "gym",
+   "name": "Gym membership",
+   "unit": "per month",
+   "group": "Eating out & leisure",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "bus",
+   "name": "Bus / metro ticket",
+   "unit": "one way",
+   "group": "Transport",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "pass",
+   "name": "Monthly transit pass",
+   "unit": "per month",
+   "group": "Transport",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "taxi",
+   "name": "Taxi ride",
+   "unit": "5 km",
+   "group": "Transport",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "petrol",
+   "name": "Petrol",
+   "unit": "1 litre",
+   "group": "Transport",
+   "check": "weekly",
+   "also_called": ""
+  },
+  {
+   "id": "diesel",
+   "name": "Diesel",
+   "unit": "1 litre",
+   "group": "Transport",
+   "check": "weekly",
+   "also_called": ""
+  },
+  {
+   "id": "cngf",
+   "name": "CNG",
+   "unit": "1 kg",
+   "group": "Transport",
+   "check": "weekly",
+   "also_called": ""
+  },
+  {
+   "id": "train",
+   "name": "Train, 500 km",
+   "unit": "standard class",
+   "group": "Transport",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "bike",
+   "name": "Commuter motorcycle (100–125 cc)",
+   "unit": "on-road price",
+   "group": "Vehicles",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "scooter",
+   "name": "Scooter (110–125 cc)",
+   "unit": "on-road price",
+   "group": "Vehicles",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "cruiser",
+   "name": "Motorcycle, 350 cc",
+   "unit": "on-road price",
+   "group": "Vehicles",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "car",
+   "name": "Compact car (hatchback)",
+   "unit": "on-road price",
+   "group": "Vehicles",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "suv",
+   "name": "Mid-size SUV",
+   "unit": "on-road price",
+   "group": "Vehicles",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "carsvc",
+   "name": "Car periodic service",
+   "unit": "1 visit",
+   "group": "Home services",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "flight",
+   "name": "Domestic flight, ~1000 km",
+   "unit": "one way, economy",
+   "group": "Travel",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "hotel",
+   "name": "Hotel, mid-range",
+   "unit": "1 night, 2 people",
+   "group": "Travel",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "rent1",
+   "name": "1-bedroom flat, city centre",
+   "unit": "rent per month",
+   "group": "Housing",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "rent2",
+   "name": "1-bedroom flat, outside centre",
+   "unit": "rent per month",
+   "group": "Housing",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "rent3",
+   "name": "2-bedroom flat, outside centre",
+   "unit": "rent per month",
+   "group": "Housing",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "rent4",
+   "name": "3-bedroom flat, city centre",
+   "unit": "rent per month",
+   "group": "Housing",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "buy",
+   "name": "Flat to buy, city centre",
+   "unit": "per m²",
+   "group": "Housing",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "utils",
+   "name": "Electricity, water & gas",
+   "unit": "per month, 85 m² flat",
+   "group": "Bills",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "internet",
+   "name": "Home internet",
+   "unit": "per month",
+   "group": "Bills",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "mobile",
+   "name": "Mobile plan with data",
+   "unit": "per month",
+   "group": "Bills",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "ott",
+   "name": "Video streaming, standard plan",
+   "unit": "per month",
+   "group": "Bills",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "plumber",
+   "name": "Plumber, basic repair",
+   "unit": "1 visit, labour only",
+   "group": "Home services",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "electrician",
+   "name": "Electrician, basic repair",
+   "unit": "1 visit, labour only",
+   "group": "Home services",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "carpenter",
+   "name": "Carpenter, small job",
+   "unit": "1 visit, labour only",
+   "group": "Home services",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "acsvc",
+   "name": "AC servicing",
+   "unit": "1 unit",
+   "group": "Home services",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "pest",
+   "name": "Pest control",
+   "unit": "1 visit, 2-bedroom flat",
+   "group": "Home services",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "clean",
+   "name": "Deep cleaning",
+   "unit": "2-bedroom flat",
+   "group": "Home services",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "paint",
+   "name": "Painting, full flat",
+   "unit": "2-bedroom, labour + paint",
+   "group": "Home services",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "maid",
+   "name": "Domestic help, part-time",
+   "unit": "per month",
+   "group": "Home services",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "cook",
+   "name": "Cook, part-time",
+   "unit": "per month",
+   "group": "Home services",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "haircut",
+   "name": "Men's haircut",
+   "unit": "basic",
+   "group": "Personal care",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "salon",
+   "name": "Women's haircut",
+   "unit": "basic",
+   "group": "Personal care",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "laundry",
+   "name": "Laundry, wash & iron",
+   "unit": "1 kg",
+   "group": "Personal care",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "doctor",
+   "name": "Doctor visit (private)",
+   "unit": "1 consultation",
+   "group": "Health",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "dentist",
+   "name": "Dentist check-up & cleaning",
+   "unit": "1 visit",
+   "group": "Health",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "hospital",
+   "name": "Hospital room, private",
+   "unit": "per day",
+   "group": "Health",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "insure",
+   "name": "Health insurance, family",
+   "unit": "per year",
+   "group": "Health",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "preschool",
+   "name": "Preschool / daycare",
+   "unit": "per month",
+   "group": "Education",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "school",
+   "name": "Private school, local",
+   "unit": "per year",
+   "group": "Education",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "intl",
+   "name": "International school",
+   "unit": "per year",
+   "group": "Education",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "tutor",
+   "name": "Private tutor",
+   "unit": "per hour",
+   "group": "Home services",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "iphone",
+   "name": "iPhone, latest base model",
+   "unit": "128–256 GB",
+   "group": "Electronics & appliances",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "android",
+   "name": "Android phone, mid-range",
+   "unit": "new",
+   "group": "Electronics & appliances",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "laptop",
+   "name": "Mid-range laptop",
+   "unit": "new",
+   "group": "Electronics & appliances",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "tv",
+   "name": "Smart TV, 55-inch",
+   "unit": "new",
+   "group": "Electronics & appliances",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "fridge",
+   "name": "Refrigerator, 250 litre",
+   "unit": "new",
+   "group": "Electronics & appliances",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "washer",
+   "name": "Washing machine, 7 kg",
+   "unit": "new",
+   "group": "Electronics & appliances",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "ac",
+   "name": "Split AC, 1.5 ton",
+   "unit": "new, installed",
+   "group": "Electronics & appliances",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "jeans",
+   "name": "Jeans",
+   "unit": "1 pair",
+   "group": "Clothing",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "shirt",
+   "name": "Cotton shirt",
+   "unit": "1",
+   "group": "Clothing",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "shoes",
+   "name": "Running shoes",
+   "unit": "1 pair, mid-range",
+   "group": "Clothing",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "formal",
+   "name": "Leather shoes",
+   "unit": "1 pair",
+   "group": "Clothing",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xcoconutsapling",
+   "name": "Coconut sapling",
+   "unit": "1 plant, nursery",
+   "group": "Plants & garden",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xmangosaplinggrafte",
+   "name": "Mango sapling (grafted)",
+   "unit": "1 plant",
+   "group": "Plants & garden",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xbananasuckerplant",
+   "name": "Banana sucker / plant",
+   "unit": "1 plant",
+   "group": "Plants & garden",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xneemsapling",
+   "name": "Neem sapling",
+   "unit": "1 plant",
+   "group": "Plants & garden",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xteaksapling",
+   "name": "Teak sapling",
+   "unit": "1 plant",
+   "group": "Plants & garden",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xroseplant",
+   "name": "Rose plant",
+   "unit": "1 pot",
+   "group": "Plants & garden",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xtulsiplant",
+   "name": "Tulsi plant",
+   "unit": "1 pot",
+   "group": "Plants & garden",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xmoneyplant",
+   "name": "Money plant",
+   "unit": "1 pot",
+   "group": "Plants & garden",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xindoorplantmedium",
+   "name": "Indoor plant, medium",
+   "unit": "1 pot",
+   "group": "Plants & garden",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xlawngrass",
+   "name": "Lawn grass",
+   "unit": "per m², laid",
+   "group": "Plants & garden",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xpottingsoil",
+   "name": "Potting soil",
+   "unit": "10 kg",
+   "group": "Plants & garden",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xcowdungmanure",
+   "name": "Cow dung manure",
+   "unit": "50 kg",
+   "group": "Plants & garden",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xvegetableseeds",
+   "name": "Vegetable seeds",
+   "unit": "1 packet",
+   "group": "Plants & garden",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xclayflowerpot12inc",
+   "name": "Clay flower pot, 12-inch",
+   "unit": "1",
+   "group": "Plants & garden",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xgardenhose",
+   "name": "Garden hose",
+   "unit": "15 m",
+   "group": "Plants & garden",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xcowdairycrossbreed",
+   "name": "Cow, dairy (crossbreed)",
+   "unit": "1 animal",
+   "group": "Farm & animals",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xbuffalodairy",
+   "name": "Buffalo, dairy",
+   "unit": "1 animal",
+   "group": "Farm & animals",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xgoat",
+   "name": "Goat",
+   "unit": "1 animal, adult",
+   "group": "Farm & animals",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xsheep",
+   "name": "Sheep",
+   "unit": "1 animal, adult",
+   "group": "Farm & animals",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xcountrychickenlive",
+   "name": "Country chicken, live",
+   "unit": "1 bird",
+   "group": "Farm & animals",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xbroilerchickenlive",
+   "name": "Broiler chicken, live",
+   "unit": "1 kg",
+   "group": "Farm & animals",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xcattlefeed",
+   "name": "Cattle feed",
+   "unit": "50 kg bag",
+   "group": "Farm & animals",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xureafertiliser",
+   "name": "Urea fertiliser",
+   "unit": "45 kg bag",
+   "group": "Farm & animals",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xdapfertiliser",
+   "name": "DAP fertiliser",
+   "unit": "50 kg bag",
+   "group": "Farm & animals",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xtractor45hp",
+   "name": "Tractor, 45 hp",
+   "unit": "new, on-road",
+   "group": "Farm & animals",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xagriculturalland",
+   "name": "Agricultural land",
+   "unit": "per acre, rural",
+   "group": "Farm & animals",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xfarmlabour",
+   "name": "Farm labour",
+   "unit": "per day",
+   "group": "Farm & animals",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xcoconuttendertodri",
+   "name": "Coconut, tender (to drink)",
+   "unit": "1",
+   "group": "Farm & animals",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xcoconutdry",
+   "name": "Coconut, dry",
+   "unit": "1",
+   "group": "Farm & animals",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xcement",
+   "name": "Cement",
+   "unit": "50 kg bag",
+   "group": "Building materials",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xsteeltmtbars",
+   "name": "Steel TMT bars",
+   "unit": "1 kg",
+   "group": "Building materials",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xredbricks",
+   "name": "Red bricks",
+   "unit": "1,000 bricks",
+   "group": "Building materials",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xrivermsand",
+   "name": "River / M-sand",
+   "unit": "1 tonne",
+   "group": "Building materials",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xbluemetalgravel",
+   "name": "Blue metal / gravel",
+   "unit": "1 tonne",
+   "group": "Building materials",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xceramicfloortiles",
+   "name": "Ceramic floor tiles",
+   "unit": "per m²",
+   "group": "Building materials",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xvitrifiedtiles",
+   "name": "Vitrified tiles",
+   "unit": "per m²",
+   "group": "Building materials",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xwallpaintemulsion",
+   "name": "Wall paint, emulsion",
+   "unit": "20 litres",
+   "group": "Building materials",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xplywood18mm",
+   "name": "Plywood, 18 mm",
+   "unit": "per m²",
+   "group": "Building materials",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xteakwood",
+   "name": "Teak wood",
+   "unit": "per cubic foot",
+   "group": "Building materials",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xpvcpipe4inch",
+   "name": "PVC pipe, 4-inch",
+   "unit": "3 m length",
+   "group": "Building materials",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xelectricalwire15mm",
+   "name": "Electrical wire, 1.5 mm²",
+   "unit": "90 m coil",
+   "group": "Building materials",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xhouseconstruction",
+   "name": "House construction",
+   "unit": "per sq ft, basic finish",
+   "group": "Building materials",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xmasonlabourer",
+   "name": "Mason / labourer",
+   "unit": "per day",
+   "group": "Building materials",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xhammer",
+   "name": "Hammer",
+   "unit": "1",
+   "group": "Tools & hardware",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xscrewdriverset",
+   "name": "Screwdriver set",
+   "unit": "1 set",
+   "group": "Tools & hardware",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xpowerdrill",
+   "name": "Power drill",
+   "unit": "1, mid-range",
+   "group": "Tools & hardware",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xanglegrinder",
+   "name": "Angle grinder",
+   "unit": "1",
+   "group": "Tools & hardware",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xladderaluminium6ft",
+   "name": "Ladder, aluminium 6 ft",
+   "unit": "1",
+   "group": "Tools & hardware",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xpadlock",
+   "name": "Padlock",
+   "unit": "1, medium",
+   "group": "Tools & hardware",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xledbulb9w",
+   "name": "LED bulb, 9 W",
+   "unit": "1",
+   "group": "Tools & hardware",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xceilingfan",
+   "name": "Ceiling fan",
+   "unit": "1, standard",
+   "group": "Tools & hardware",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xwatertank1000l",
+   "name": "Water tank, 1000 L",
+   "unit": "1",
+   "group": "Tools & hardware",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xinverterwithbatter",
+   "name": "Inverter with battery",
+   "unit": "home, 1 kVA",
+   "group": "Tools & hardware",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xsolarpanelsrooftop",
+   "name": "Solar panels, rooftop",
+   "unit": "per kW, installed",
+   "group": "Tools & hardware",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xtyrecar1415inch",
+   "name": "Tyre, car (14–15 inch)",
+   "unit": "1",
+   "group": "Vehicle running costs",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xtyremotorcycle",
+   "name": "Tyre, motorcycle",
+   "unit": "1",
+   "group": "Vehicle running costs",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xcarbattery",
+   "name": "Car battery",
+   "unit": "1",
+   "group": "Vehicle running costs",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xengineoil",
+   "name": "Engine oil",
+   "unit": "1 litre",
+   "group": "Vehicle running costs",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xcarinsurancecompac",
+   "name": "Car insurance, compact",
+   "unit": "per year",
+   "group": "Vehicle running costs",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xbikeinsurance",
+   "name": "Bike insurance",
+   "unit": "per year",
+   "group": "Vehicle running costs",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xcarwash",
+   "name": "Car wash",
+   "unit": "1",
+   "group": "Vehicle running costs",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xparkingcitycentre",
+   "name": "Parking, city centre",
+   "unit": "per hour",
+   "group": "Vehicle running costs",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xdrivinglessons",
+   "name": "Driving lessons",
+   "unit": "full course",
+   "group": "Vehicle running costs",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xusedcar5yearsold",
+   "name": "Used car, 5 years old",
+   "unit": "compact hatchback",
+   "group": "Vehicle running costs",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xusedmotorcycle5yea",
+   "name": "Used motorcycle, 5 years old",
+   "unit": "125 cc",
+   "group": "Vehicle running costs",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xbicycle",
+   "name": "Bicycle",
+   "unit": "1, basic",
+   "group": "Vehicle running costs",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xelectricscooter",
+   "name": "Electric scooter",
+   "unit": "1, on-road",
+   "group": "Vehicle running costs",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xpressurecooker5l",
+   "name": "Pressure cooker, 5 L",
+   "unit": "1",
+   "group": "Kitchen & household",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xmixergrinder",
+   "name": "Mixer grinder",
+   "unit": "1",
+   "group": "Kitchen & household",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xgasstove2burner",
+   "name": "Gas stove, 2 burner",
+   "unit": "1",
+   "group": "Kitchen & household",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xnonstickpan",
+   "name": "Non-stick pan",
+   "unit": "1",
+   "group": "Kitchen & household",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xsteelplates",
+   "name": "Steel plates",
+   "unit": "set of 6",
+   "group": "Kitchen & household",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xmicrowaveoven",
+   "name": "Microwave oven",
+   "unit": "1",
+   "group": "Kitchen & household",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xwaterpurifierro",
+   "name": "Water purifier (RO)",
+   "unit": "1",
+   "group": "Kitchen & household",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xbucketplastic",
+   "name": "Bucket, plastic",
+   "unit": "1",
+   "group": "Kitchen & household",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xbedsheetdouble",
+   "name": "Bedsheet, double",
+   "unit": "1",
+   "group": "Kitchen & household",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xpillow",
+   "name": "Pillow",
+   "unit": "1",
+   "group": "Kitchen & household",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xmosquitorepellentr",
+   "name": "Mosquito repellent refill",
+   "unit": "1",
+   "group": "Kitchen & household",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xmatchbox",
+   "name": "Matchbox",
+   "unit": "1",
+   "group": "Kitchen & household",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xcandles",
+   "name": "Candles",
+   "unit": "pack of 6",
+   "group": "Kitchen & household",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xmattressqueen",
+   "name": "Mattress, queen",
+   "unit": "1, foam",
+   "group": "Furniture",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xbedframequeen",
+   "name": "Bed frame, queen",
+   "unit": "1, wooden",
+   "group": "Furniture",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xsofa3seater",
+   "name": "Sofa, 3-seater",
+   "unit": "1",
+   "group": "Furniture",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xdiningtableset4sea",
+   "name": "Dining table set, 4-seater",
+   "unit": "1",
+   "group": "Furniture",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xofficechair",
+   "name": "Office chair",
+   "unit": "1",
+   "group": "Furniture",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xwardrobe2door",
+   "name": "Wardrobe, 2-door",
+   "unit": "1",
+   "group": "Furniture",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xplasticchair",
+   "name": "Plastic chair",
+   "unit": "1",
+   "group": "Furniture",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xdiapers",
+   "name": "Diapers",
+   "unit": "pack of 50",
+   "group": "Baby & kids",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xbabyformula",
+   "name": "Baby formula",
+   "unit": "400 g",
+   "group": "Baby & kids",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xtoysmall",
+   "name": "Toy, small",
+   "unit": "1",
+   "group": "Baby & kids",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xschoolbag",
+   "name": "School bag",
+   "unit": "1",
+   "group": "Baby & kids",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xschooluniform",
+   "name": "School uniform",
+   "unit": "1 set",
+   "group": "Baby & kids",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xbirthdaycake",
+   "name": "Birthday cake",
+   "unit": "1 kg",
+   "group": "Baby & kids",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xdogfood",
+   "name": "Dog food",
+   "unit": "3 kg bag",
+   "group": "Pets",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xcatfood",
+   "name": "Cat food",
+   "unit": "1 kg",
+   "group": "Pets",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xvetvisit",
+   "name": "Vet visit",
+   "unit": "1 consultation",
+   "group": "Pets",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xpuppyindianbreed",
+   "name": "Puppy, Indian breed",
+   "unit": "from a breeder",
+   "group": "Pets",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xpuppylabrador",
+   "name": "Puppy, Labrador",
+   "unit": "from a breeder",
+   "group": "Pets",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xpetgrooming",
+   "name": "Pet grooming",
+   "unit": "1 session",
+   "group": "Pets",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xnotebook",
+   "name": "Notebook",
+   "unit": "1, 200 pages",
+   "group": "Stationery & books",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xballpointpen",
+   "name": "Ballpoint pen",
+   "unit": "1",
+   "group": "Stationery & books",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xa4paper",
+   "name": "A4 paper",
+   "unit": "500 sheets",
+   "group": "Stationery & books",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xpaperbacknovel",
+   "name": "Paperback novel",
+   "unit": "1",
+   "group": "Stationery & books",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xnewspaper",
+   "name": "Newspaper",
+   "unit": "1 copy",
+   "group": "Stationery & books",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xprintoutphotocopy",
+   "name": "Printout / photocopy",
+   "unit": "1 page",
+   "group": "Stationery & books",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xcricketbat",
+   "name": "Cricket bat",
+   "unit": "1, mid-range",
+   "group": "Sports & hobbies",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xfootball",
+   "name": "Football",
+   "unit": "1",
+   "group": "Sports & hobbies",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xbadmintonracket",
+   "name": "Badminton racket",
+   "unit": "1",
+   "group": "Sports & hobbies",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xyogamat",
+   "name": "Yoga mat",
+   "unit": "1",
+   "group": "Sports & hobbies",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xswimmingpoolentry",
+   "name": "Swimming pool entry",
+   "unit": "1 visit",
+   "group": "Sports & hobbies",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xguitaracousticbegi",
+   "name": "Guitar, acoustic beginner",
+   "unit": "1",
+   "group": "Sports & hobbies",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xcameraentrydslr",
+   "name": "Camera, entry DSLR",
+   "unit": "1",
+   "group": "Sports & hobbies",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xtrekkingpackagehim",
+   "name": "Trekking package, Himalayan",
+   "unit": "5–6 days, guided",
+   "group": "Sports & hobbies",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xfacecream",
+   "name": "Face cream",
+   "unit": "50 g",
+   "group": "Beauty & cosmetics",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xsunscreen",
+   "name": "Sunscreen",
+   "unit": "50 ml",
+   "group": "Beauty & cosmetics",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xhairoil",
+   "name": "Hair oil",
+   "unit": "200 ml",
+   "group": "Beauty & cosmetics",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xlipstick",
+   "name": "Lipstick",
+   "unit": "1",
+   "group": "Beauty & cosmetics",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xperfume",
+   "name": "Perfume",
+   "unit": "100 ml, mid-range",
+   "group": "Beauty & cosmetics",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xfacialatasalon",
+   "name": "Facial at a salon",
+   "unit": "1",
+   "group": "Beauty & cosmetics",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xmanicure",
+   "name": "Manicure",
+   "unit": "1",
+   "group": "Beauty & cosmetics",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xparacetamoltablets",
+   "name": "Paracetamol tablets",
+   "unit": "strip of 15",
+   "group": "Medicines",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xcoughsyrup",
+   "name": "Cough syrup",
+   "unit": "100 ml",
+   "group": "Medicines",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xbandages",
+   "name": "Bandages",
+   "unit": "box",
+   "group": "Medicines",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xthermometerdigital",
+   "name": "Thermometer, digital",
+   "unit": "1",
+   "group": "Medicines",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xbloodtestcompleteb",
+   "name": "Blood test, complete blood count",
+   "unit": "1",
+   "group": "Medicines",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xxray",
+   "name": "X-ray",
+   "unit": "1",
+   "group": "Medicines",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xmriscan",
+   "name": "MRI scan",
+   "unit": "1",
+   "group": "Medicines",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xspectacles",
+   "name": "Spectacles",
+   "unit": "frame + lenses",
+   "group": "Medicines",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xcontactlensesmonth",
+   "name": "Contact lenses, monthly",
+   "unit": "1 pair",
+   "group": "Medicines",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xweddinghallmidrang",
+   "name": "Wedding hall, mid-range",
+   "unit": "1 day",
+   "group": "Events & ceremonies",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xweddingcatering",
+   "name": "Wedding catering",
+   "unit": "per plate, veg",
+   "group": "Events & ceremonies",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xweddingphotographe",
+   "name": "Wedding photographer",
+   "unit": "1 day",
+   "group": "Events & ceremonies",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xpriestofficiant",
+   "name": "Priest / officiant",
+   "unit": "1 ceremony",
+   "group": "Events & ceremonies",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xflowergarland",
+   "name": "Flower garland",
+   "unit": "1, wedding size",
+   "group": "Events & ceremonies",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xjasmineflowers",
+   "name": "Jasmine flowers",
+   "unit": "1 muzham / 30 cm string",
+   "group": "Events & ceremonies",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xsilksaree",
+   "name": "Silk saree",
+   "unit": "1, mid-range",
+   "group": "Events & ceremonies",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xmenssuit",
+   "name": "Men's suit",
+   "unit": "1",
+   "group": "Events & ceremonies",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xgoldringplain",
+   "name": "Gold ring, plain",
+   "unit": "4 grams, 22 carat",
+   "group": "Events & ceremonies",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xcourierdomestic",
+   "name": "Courier, domestic",
+   "unit": "1 kg parcel",
+   "group": "Courier & everyday services",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xpostcardletterstam",
+   "name": "Post card / letter stamp",
+   "unit": "1",
+   "group": "Courier & everyday services",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xmoverspackerslocal",
+   "name": "Movers & packers, local",
+   "unit": "2-bedroom flat",
+   "group": "Courier & everyday services",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xtailoringshirtstit",
+   "name": "Tailoring, shirt stitching",
+   "unit": "1",
+   "group": "Courier & everyday services",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xshoerepair",
+   "name": "Shoe repair",
+   "unit": "1 pair",
+   "group": "Courier & everyday services",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xmobilescreenreplac",
+   "name": "Mobile screen replacement",
+   "unit": "mid-range phone",
+   "group": "Courier & everyday services",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xphonerechargebasic",
+   "name": "Phone recharge, basic",
+   "unit": "per month",
+   "group": "Courier & everyday services",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xnotarydocumentatte",
+   "name": "Notary / document attestation",
+   "unit": "1",
+   "group": "Courier & everyday services",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xcarheadlightbulb",
+   "name": "Car headlight bulbs, halogen",
+   "unit": "pair",
+   "group": "Vehicle running costs",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xcarledheadlight",
+   "name": "Car LED headlight bulbs",
+   "unit": "pair",
+   "group": "Vehicle running costs",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xcartaillight",
+   "name": "Car tail light assembly",
+   "unit": "1 side",
+   "group": "Vehicle running costs",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xcarseatcovers",
+   "name": "Car seat covers",
+   "unit": "full set",
+   "group": "Vehicle running costs",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xbikeseatcover",
+   "name": "Bike seat cover",
+   "unit": "1",
+   "group": "Vehicle running costs",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xbikehelmet",
+   "name": "Helmet, ISI / certified",
+   "unit": "1",
+   "group": "Vehicle running costs",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xtreadmill",
+   "name": "Treadmill, home",
+   "unit": "1, motorised",
+   "group": "Sports & hobbies",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xexercisecycle",
+   "name": "Exercise cycle",
+   "unit": "1",
+   "group": "Sports & hobbies",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xdumbbells",
+   "name": "Dumbbells",
+   "unit": "pair of 5 kg",
+   "group": "Sports & hobbies",
+   "check": "rotate",
+   "also_called": ""
+  },
+  {
+   "id": "xdumbbellset",
+   "name": "Adjustable dumbbell set",
+   "unit": "20 kg total",
+   "group": "Sports & hobbies",
+   "check": "rotate",
+   "also_called": ""
   }
  ]
 }

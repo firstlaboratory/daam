@@ -19,6 +19,25 @@
   "radish": 48,
   "rawmango": 96
  },
+ "updated": {
+  "tomato": "2026-11-02",
+  "onion": "2026-11-02",
+  "potato": "2026-11-02",
+  "carrot": "2026-11-02",
+  "beans": "2026-11-02",
+  "okra": "2026-11-02",
+  "cucumber": "2026-11-02",
+  "ginger": "2026-11-02",
+  "coriander": "2026-11-02",
+  "lemon": "2026-11-02",
+  "beetroot": "2026-11-02",
+  "drumstick": "2026-11-02",
+  "mint": "2026-11-02",
+  "smallonion": "2026-11-02",
+  "radish": "2026-11-02",
+  "rawmango": "2026-11-02",
+  "curryleaves": "2026-11-02"
+ },
  "new_items": [
   {
    "id": "curryleaves",
