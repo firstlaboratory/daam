@@ -93,6 +93,7 @@ select.mini{width:auto;padding:5px 8px;font:500 .82rem var(--mono);border-radius
 .settings[open] summary{margin-bottom:8px}
 .keyrow{display:flex;gap:8px;flex-wrap:wrap}
 .keyrow input{flex:1 1 220px}
+.est{margin-top:3px;font:600 .64rem var(--body);letter-spacing:.04em;text-transform:uppercase;color:var(--accent)}
 .empty{padding:24px 14px;color:var(--muted);text-align:center}
 .note{color:var(--muted);font-size:.8rem;line-height:1.5}
 </style>
@@ -150,7 +151,7 @@ select.mini{width:auto;padding:5px 8px;font:500 .82rem var(--mono);border-radius
     </div>
     <div class="stamp" id="mandiStatus" style="text-align:left"></div>
   </details>
-  <p class="note">Each price is the typical price you'd pay at an ordinary shop or provider in that city — not the lowest or highest. The smaller “usually” range shows how much it varies between shops and seasons. Prices are estimated from cost-of-living data, so treat them as a guide, not a quote. Indian fuel, LPG, vehicle and some grocery prices are set individually; vehicles are approximate on-road prices. Home services are labour only, per visit, for a basic job. Items marked “live” are updated every morning: gold and silver from world spot prices, and Indian vegetables, fruit and grains from government market (mandi) prices, converted to a typical shop price. Before you buy, use the links under each item to check today's price. Conversions use the exchange rates shown above; tap Refresh for the latest.</p>
+  <p class="note">For India, every price is a real typical price set item by item (Chennai unless you pick another city). For other countries, prices are rough estimates for now, marked as such. Each price is the typical price you'd pay at an ordinary shop or provider in that city — not the lowest or highest. The smaller “usually” range shows how much it varies between shops and seasons. Prices are estimated from cost-of-living data, so treat them as a guide, not a quote. Indian fuel, LPG, vehicle and some grocery prices are set individually; vehicles are approximate on-road prices. Home services are labour only, per visit, for a basic job. Items marked “live” are updated every morning: gold and silver from world spot prices, and Indian vegetables, fruit and grains from government market (mandi) prices, converted to a typical shop price. Before you buy, use the links under each item to check today's price. Conversions use the exchange rates shown above; tap Refresh for the latest.</p>
 </div>
 
 <script>
@@ -278,6 +279,10 @@ const OVERRIDE = {
  bike:{IN:90000}, scooter:{IN:92000}, cruiser:{IN:215000}, car:{IN:670000}, suv:{IN:1450000},
  fridge:{IN:28000}, ac:{IN:42000}, ott:{IN:499}, iphone:{IN:82900},
 };
+
+// Real typical Indian prices (Chennai unless a city is given), set by hand — no formula.
+const INDIA_REAL = {"chicken": 260, "fish": 350, "oranges": 100, "mango": 120, "salt": 28, "soap": 40, "paste": 60, "shampoo": 350, "detergent": 130, "tissue": 200, "meal": 150, "dinner": 1500, "fastfood": 300, "street": 60, "pizza": 450, "coffee": 200, "chai": 15, "soda": 40, "beer": 250, "movie": 200, "gym": 1500, "bus": 25, "pass": 1000, "taxi": 150, "train": 400, "carsvc": 4500, "flight": 4500, "hotel": 2500, "utils": 3000, "internet": 700, "mobile": 350, "acsvc": 600, "pest": 1200, "clean": 3500, "paint": 70000, "maid": 4000, "cook": 6000, "tutor": 400, "haircut": 200, "salon": 600, "laundry": 100, "doctor": 600, "dentist": 1200, "hospital": 6000, "insure": 25000, "preschool": 6000, "school": 80000, "intl": 400000, "android": 20000, "laptop": 55000, "tv": 40000, "washer": 30000, "jeans": 1500, "shirt": 900, "shoes": 3500, "formal": 3000, "rent1": {"IN": 18000, "IN:Tamil Nadu (Chennai)": 18000, "IN:Maharashtra (Mumbai)": 50000, "IN:Karnataka (Bengaluru)": 28000, "IN:Delhi": 25000, "IN:Telangana (Hyderabad)": 20000, "IN:Kerala (Kochi)": 14000, "IN:West Bengal (Kolkata)": 15000, "IN:Gujarat (Ahmedabad)": 14000, "IN:Rajasthan (Jaipur)": 12000, "IN:Uttar Pradesh (Lucknow)": 10000, "IN:Uttarakhand (Dehradun)": 11000, "IN:Punjab (Chandigarh)": 15000}, "rent2": {"IN": 11000, "IN:Tamil Nadu (Chennai)": 11000, "IN:Maharashtra (Mumbai)": 28000, "IN:Karnataka (Bengaluru)": 17000, "IN:Delhi": 15000, "IN:Telangana (Hyderabad)": 13000, "IN:Kerala (Kochi)": 9000, "IN:West Bengal (Kolkata)": 9000, "IN:Gujarat (Ahmedabad)": 9000, "IN:Rajasthan (Jaipur)": 8000, "IN:Uttar Pradesh (Lucknow)": 7000, "IN:Uttarakhand (Dehradun)": 8000, "IN:Punjab (Chandigarh)": 10000}, "rent3": {"IN": 16000, "IN:Tamil Nadu (Chennai)": 16000, "IN:Maharashtra (Mumbai)": 40000, "IN:Karnataka (Bengaluru)": 25000, "IN:Delhi": 22000, "IN:Telangana (Hyderabad)": 20000, "IN:Kerala (Kochi)": 13000, "IN:West Bengal (Kolkata)": 14000, "IN:Gujarat (Ahmedabad)": 13000, "IN:Rajasthan (Jaipur)": 12000, "IN:Uttar Pradesh (Lucknow)": 10000, "IN:Uttarakhand (Dehradun)": 12000, "IN:Punjab (Chandigarh)": 15000}, "rent4": {"IN": 45000, "IN:Tamil Nadu (Chennai)": 45000, "IN:Maharashtra (Mumbai)": 150000, "IN:Karnataka (Bengaluru)": 70000, "IN:Delhi": 70000, "IN:Telangana (Hyderabad)": 50000, "IN:Kerala (Kochi)": 30000, "IN:West Bengal (Kolkata)": 40000, "IN:Gujarat (Ahmedabad)": 35000, "IN:Rajasthan (Jaipur)": 30000, "IN:Uttar Pradesh (Lucknow)": 25000, "IN:Uttarakhand (Dehradun)": 28000, "IN:Punjab (Chandigarh)": 40000}, "buy": {"IN": 110000, "IN:Tamil Nadu (Chennai)": 110000, "IN:Maharashtra (Mumbai)": 350000, "IN:Karnataka (Bengaluru)": 140000, "IN:Delhi": 160000, "IN:Telangana (Hyderabad)": 110000, "IN:Kerala (Kochi)": 80000, "IN:West Bengal (Kolkata)": 90000, "IN:Gujarat (Ahmedabad)": 75000, "IN:Rajasthan (Jaipur)": 65000, "IN:Uttar Pradesh (Lucknow)": 60000, "IN:Uttarakhand (Dehradun)": 60000, "IN:Punjab (Chandigarh)": 100000}};
+Object.entries(INDIA_REAL).forEach(([id,v])=>{OVERRIDE[id]=Object.assign(OVERRIDE[id]||{}, typeof v==="number"?{IN:v}:v)});
 const NO_STATE_SCALE = new Set(["lpg","diesel","cngf","bike","scooter","cruiser","car","suv","fridge","ac","ott","iphone"]);
 
 
@@ -304,12 +309,13 @@ const countryBy = code=>COUNTRIES.find(c=>c.code===code);
 const stateObj = (code,name)=>{const s=(STATES[code]||[]).find(s=>s[0]===name);return s?{name:s[0],m:s[1],h:s[2],fuel:s[3]}:null};
 
 // Local price stays fixed at baseline rates; conversion to other currencies uses current rates.
+function isReal(c,it){const ov=OVERRIDE[it.id];return !!(ov&&ov[c.code]!=null)||["fuel","gold"].includes(it.cat)||LIVE[it.id]}
 function localPrice(c,st,it){
   const m=st?st.m:1, gS=1+(m-1)*.6;
   const ov=OVERRIDE[it.id];
   if(ov){
     if(st && ov[c.code+":"+st.name]!=null) return ov[c.code+":"+st.name];
-    if(ov[c.code]!=null) return ov[c.code]*(st&&!NO_STATE_SCALE.has(it.id)?gS:1);
+    if(ov[c.code]!=null) return ov[c.code];
   }
   if(it.cat==="cng") return null; // only sold where listed above
   if(it.cat==="fuel") return st?st.fuel:c.fuel;
@@ -418,7 +424,7 @@ function renderPlace(){
   const items=ITEMS.filter(it=>{if(cat!=="All"&&it.group!==cat)return false;if(!words.length)return true;
     const hay=(it.name+" "+it.group+" "+it.unit+" "+(SYN[it.id]||"")).toLowerCase();return words.every(w=>hay.includes(w))});
   const where = st?`${st.name}, ${c.name}`:c.name;
-  let html=`<h2>${where}<small>local: ${c.cur} · estimates</small></h2>`;
+  let html=`<h2>${where}<small>local: ${c.cur}${c.code==="IN"?" · typical shop prices":" · rough estimates"}</small></h2>`;
   if(!items.length){html+=`<div class="empty">“${esc(query)}” isn't in the list yet.</div>`}
   CAT_ORDER.forEach(g=>{
     const rows=items.filter(it=>it.group===g); if(!rows.length) return;
@@ -427,7 +433,7 @@ function renderPlace(){
       const lp=localPrice(c,st,it);
       if(lp==null) return;
       const conv=shown.filter(cur=>cur!==c.cur).map(cur=>`<span>${fmt(convert(lp,c.cur,cur),cur)}</span>`).join("");
-      html+=`<div class="row"><div><div class="iname">${it.name}</div><div class="iunit">${it.unit}</div></div><div class="price">${fmt(lp,c.cur)}${(sp=>sp?`<div class="range">usually ${fmt(lp*sp[0],c.cur)}–${fmt(lp*sp[1],c.cur)}</div>`:`<div class="range">${EXACT.has(it.id)&&OVERRIDE[it.id]?.[c.code]!=null?"listed price":"same everywhere"}</div>`)(spread(it))}${liveTag(it,c)}</div>${conv?`<div class="conv">${conv}</div>`:""}<div class="src"><span>Check today's price:</span>${sources(c,st,it).map(([l,u])=>`<a href="${u}" target="_blank" rel="noopener">${l} ↗</a>`).join("")}</div></div>`;
+      html+=`<div class="row"><div><div class="iname">${it.name}</div><div class="iunit">${it.unit}</div></div><div class="price">${fmt(lp,c.cur)}${(sp=>sp?`<div class="range">usually ${fmt(lp*sp[0],c.cur)}–${fmt(lp*sp[1],c.cur)}</div>`:`<div class="range">${EXACT.has(it.id)&&OVERRIDE[it.id]?.[c.code]!=null?"listed price":"same everywhere"}</div>`)(spread(it))}${liveTag(it,c)||(isReal(c,it)?"":'<div class="est">rough estimate</div>')}</div>${conv?`<div class="conv">${conv}</div>`:""}<div class="src"><span>Check today's price:</span>${sources(c,st,it).map(([l,u])=>`<a href="${u}" target="_blank" rel="noopener">${l} ↗</a>`).join("")}</div></div>`;
     });
   });
   if(q){
