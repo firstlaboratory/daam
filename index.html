@@ -558,8 +558,8 @@ if(!ratesWhen||Date.now()-ratesWhen>12*3600e3){setTimeout(refreshRates,600)}
 
 // ---- Daily live prices (written by the GitHub job into prices.json) ----
 const LIVE={};
-function liveTag(it,c){const d=LIVE[it.id];if(!d){if(c.code==="IN"&&typeof SHOP_IDS!=="undefined"&&SHOP_IDS.has(it.id))return `<div class="shop">Chennai shop · 4 Nov</div>`;return""}if(d.india&&c.code!=="IN")return"";
-  return `<div class="live">● live · ${new Date(d.when).toLocaleDateString([], {day:"numeric",month:"short"})}</div>`}
+function liveTag(it,c){const d=LIVE[it.id];if(!d){if(c.code==="IN"&&typeof SHOP_IDS!=="undefined"&&SHOP_IDS.has(it.id))return `<div class="shop">Chennai shop · ${new Date(SHOP_WHEN).toLocaleDateString([], {day:"numeric",month:"short"})}</div>`;return""}if(d.india&&c.code!=="IN")return"";
+  return `<div class="live">● ${d.trend?"market-adjusted":"live"} · ${new Date(d.when).toLocaleDateString([], {day:"numeric",month:"short"})}</div>`}
 async function loadLive(){
   try{
     const r=await fetch("prices.json?d="+new Date().toISOString().slice(0,10),{cache:"no-store"});if(!r.ok)return;
@@ -580,18 +580,47 @@ async function loadLive(){
 fillPlaceSelects();fillCompareSelects();renderCats();renderStamp();renderAll();loadLive();
 
 // ---- Mandi prices fetched from the viewer's own phone (data.gov.in blocks servers abroad) ----
-const MANDI_ITEMS={papaya:["Papaya", 1.5],pomegranate:["Pomegranate", 1.5],guava:["Guava", 1.5],grapesgreen:["Grapes", 1.5],grapesblack:["Grapes", 1.5],watermelon:["Water Melon", 1.5],muskmelon:["Karbuja(Musk Melon)", 1.5],pineapple:["Pineapple", 1.5],sapota:["Chikoos(Sapota)", 1.5],custardapple:["Custard Apple (Sharifa)", 1.5],jackfruit:["Jack Fruit", 1.5],mosambi:["Mousambi(Sweet Lime)", 1.5],pear:["Pear(Marasebu)", 1.5],plum:["Plum", 1.5],kiwi:["Kiwi Fruit", 1.5],dragonfruit:["Dragon Fruit", 1.5],litchi:["Litchi", 1.5],jamun:["Jamun(Narale Hannu)", 1.5],ber:["Ber(Zizyphus/Borehannu)", 1.5],carrot:["Carrot", 1.6],beans:["Beans", 1.6],cabbage:["Cabbage", 1.6],brinjal:["Brinjal", 1.6],okra:["Bhindi(Ladies Finger)", 1.6],cucumber:["Cucumbar(Kheera)", 1.6],capsicum:["Capsicum", 1.6],chilli:["Green Chilli", 1.6],ginger:["Ginger(Green)", 1.6],beetroot:["Beetroot", 1.6],drumstick:["Drumstick", 1.6],peas:["Green Peas", 1.6],pumpkin:["Pumpkin", 1.6],onion:["Onion",1.5],tomato:["Tomato",1.6],potato:["Potato",1.5],garlic:["Garlic",1.4],bananas:["Banana",1.6],apples:["Apple",1.5],
+const MANDI_ITEMS={mint:["Mint(Pudina)", 1.6],coriander:["Coriander(Leaves)", 1.6],spinach:["Spinach", 1.6],sirukeerai:["Amaranthus", 1.6],radish:["Raddish", 1.6],chowchow:["Chow Chow", 1.6],bittergourd:["Bitter gourd", 1.6],sweetpotato:["Sweet Potato", 1.6],clusterbeans:["Cluster beans", 1.6],taro:["Colacasia", 1.6],snakegourd:["Snakeguard", 1.6],bottlegourd:["Bottle gourd", 1.6],elephantyam:["Elephant Yam (Suran)", 1.6],ashgourd:["Ashgourd", 1.6],kohlrabi:["Knool Khol", 1.6],ivygourd:["Little gourd (Kundru)", 1.6],ridgegourd:["Ridgeguard(Tori)", 1.6],amla:["Amla(Nelli Kai)", 1.6],tapioca:["Tapioca", 1.6],rawbanana:["Banana - Green", 1.6],longbeans:["Cowpea (Veg)", 1.6],lemon:["Lemon", 1.6],cauliflower:["Cauliflower", 1.6],papaya:["Papaya", 1.5],pomegranate:["Pomegranate", 1.5],guava:["Guava", 1.5],grapesgreen:["Grapes", 1.5],grapesblack:["Grapes", 1.5],watermelon:["Water Melon", 1.5],muskmelon:["Karbuja(Musk Melon)", 1.5],pineapple:["Pineapple", 1.5],sapota:["Chikoos(Sapota)", 1.5],custardapple:["Custard Apple (Sharifa)", 1.5],jackfruit:["Jack Fruit", 1.5],mosambi:["Mousambi(Sweet Lime)", 1.5],pear:["Pear(Marasebu)", 1.5],plum:["Plum", 1.5],kiwi:["Kiwi Fruit", 1.5],dragonfruit:["Dragon Fruit", 1.5],litchi:["Litchi", 1.5],jamun:["Jamun(Narale Hannu)", 1.5],ber:["Ber(Zizyphus/Borehannu)", 1.5],carrot:["Carrot", 1.6],beans:["Beans", 1.6],cabbage:["Cabbage", 1.6],brinjal:["Brinjal", 1.6],okra:["Bhindi(Ladies Finger)", 1.6],cucumber:["Cucumbar(Kheera)", 1.6],capsicum:["Capsicum", 1.6],chilli:["Green Chilli", 1.6],ginger:["Ginger(Green)", 1.6],beetroot:["Beetroot", 1.6],drumstick:["Drumstick", 1.6],peas:["Green Peas", 1.6],pumpkin:["Pumpkin", 1.6],onion:["Onion",1.5],tomato:["Tomato",1.6],potato:["Potato",1.5],garlic:["Garlic",1.4],bananas:["Banana",1.6],apples:["Apple",1.5],
   rice:["Rice",1.25],dal:["Arhar Dal(Tur Dal)",1.2],atta:["Wheat Atta",1.2],mango:["Mango",1.6],oranges:["Orange",1.6]};
 const MANDI_STATES={"Tamil Nadu":"Tamil Nadu (Chennai)","Maharashtra":"Maharashtra (Mumbai)","Karnataka":"Karnataka (Bengaluru)","NCT of Delhi":"Delhi","Delhi":"Delhi",
   "Telangana":"Telangana (Hyderabad)","Kerala":"Kerala (Kochi)","West Bengal":"West Bengal (Kolkata)","Gujarat":"Gujarat (Ahmedabad)","Rajasthan":"Rajasthan (Jaipur)",
   "Uttar Pradesh":"Uttar Pradesh (Lucknow)","Uttrakhand":"Uttarakhand (Dehradun)","Uttarakhand":"Uttarakhand (Dehradun)","Punjab":"Punjab (Chandigarh)","Chandigarh":"Punjab (Chandigarh)"};
 const median=a=>{const b=[...a].sort((x,y)=>x-y),m=b.length>>1;return b.length%2?b[m]:(b[m-1]+b[m])/2};
+// Shop prices (from a real shop list or the weekly Koyambedu check) are the anchor;
+// mandi data only moves them by the market's percentage change since that anchor date.
+const TN_KEY="Tamil Nadu (Chennai)";
+const SHOP_BASE={};let SHOP_WHEN=SHOP_DATE;
+SHOP_IDS.forEach(id=>{const v=OVERRIDE[id]?.["IN:"+TN_KEY];if(v!=null)SHOP_BASE[id]=v});
 function applyMandi(m){
+  const base=store.get("mandiBase",{});let changed=false;
   Object.entries(m||{}).forEach(([id,v])=>{
     const o=OVERRIDE[id]=OVERRIDE[id]||{};
-    Object.entries(v).forEach(([k,val])=>{if(k==="updated")return;if(k==="IN")o.IN=val;else o["IN:"+k]=val});
-    LIVE[id]={when:v.updated,india:true};
+    if(SHOP_BASE[id]!=null){
+      base[id]=base[id]||{};
+      const ratio=k=>{const cur=v[k];if(!(cur>0))return null;if(!(base[id][k]>0)){base[id][k]=cur;changed=true}return Math.min(2.5,Math.max(.4,cur/base[id][k]))};
+      const rIN=ratio("IN"), rTN=ratio(TN_KEY)??rIN;
+      if(rIN!=null)o.IN=Math.round(SHOP_BASE[id]*rIN*10)/10;
+      if(rTN!=null)o["IN:"+TN_KEY]=Math.round(SHOP_BASE[id]*rTN*10)/10;
+      Object.entries(v).forEach(([k,val])=>{if(k!=="updated"&&k!=="IN"&&k!==TN_KEY)o["IN:"+k]=val});
+      LIVE[id]={when:v.updated,india:true,trend:true};
+    }else{
+      Object.entries(v).forEach(([k,val])=>{if(k==="updated")return;if(k==="IN")o.IN=val;else o["IN:"+k]=val});
+      LIVE[id]={when:v.updated,india:true};
+    }
   });
+  if(changed)store.set("mandiBase",base);
+}
+// Weekly Koyambedu check (weekly.json, written by the Monday scheduled task) resets the anchor.
+async function loadWeekly(){
+  try{
+    const r=await fetch("weekly.json?d="+new Date().toISOString().slice(0,10),{cache:"no-store"});if(!r.ok)return;
+    const j=await r.json();if(!j.date||!j.items)return;
+    if(store.get("weeklyDate","")!==j.date){const b=store.get("mandiBase",{});Object.keys(j.items).forEach(id=>delete b[id]);store.set("mandiBase",b);store.set("weeklyDate",j.date)}
+    Object.entries(j.items).forEach(([id,v])=>{if(!(v>0)||!ITEMS.find(i=>i.id===id))return;
+      SHOP_BASE[id]=v;SHOP_IDS.add(id);OVERRIDE[id]=Object.assign(OVERRIDE[id]||{},{IN:v,["IN:"+TN_KEY]:v})});
+    SHOP_WHEN=j.date;
+    applyMandi(store.get("mandi",{}));renderAll();
+  }catch{}
 }
 function mandiMsg(t,err){const el=$("mandiStatus");el.textContent=t;el.className="stamp"+(err?" err":"");el.style.textAlign="left"}
 async function fetchMandi(key,{quiet=false}={}){
@@ -635,6 +664,7 @@ async function fetchMandi(key,{quiet=false}={}){
   $("mandiSave").addEventListener("click",()=>{const k=$("mandiKey").value.trim();if(!k){mandiMsg("Paste your key first.",true);return}
     store.set("mandiKey",k);fetchMandi(k)});
   if(key&&Date.now()-when>6*3600e3)setTimeout(()=>fetchMandi(key,{quiet:true}),1500);
+  loadWeekly();
 })();
 
 </script>
