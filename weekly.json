@@ -1,6 +1,32 @@
 {
- "date": "2026-11-04",
- "source": "Starting point: Chennai shop price list, 4 Nov 2026",
- "items": {},
- "new_items": []
+ "date": "2026-11-02",
+ "source": "Koyambedu wholesale reports (DT Next) 2 Nov 2026, converted to shop prices",
+ "items": {
+  "tomato": 80,
+  "onion": 120,
+  "potato": 48,
+  "carrot": 48,
+  "beans": 144,
+  "okra": 32,
+  "cucumber": 64,
+  "ginger": 256,
+  "coriander": 14,
+  "lemon": 13,
+  "beetroot": 80,
+  "drumstick": 128,
+  "mint": 13,
+  "smallonion": 224,
+  "radish": 48,
+  "rawmango": 96
+ },
+ "new_items": [
+  {
+   "id": "curryleaves",
+   "name": "Curry leaves (karuveppilai)",
+   "unit": "100 g",
+   "group": "Groceries",
+   "price": 5,
+   "also_called": "karuveppilai kariveppila kadi patta curry leaf"
+  }
+ ]
 }

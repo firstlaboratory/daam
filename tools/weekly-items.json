@@ -576,6 +576,12 @@
    "name": "Apple, imported (Washington, NZ)",
    "unit": "1 kg",
    "also_called": "apple imported washington fuji fruit"
+  },
+  {
+   "id": "curryleaves",
+   "name": "Curry leaves (karuveppilai)",
+   "unit": "100 g",
+   "also_called": "karuveppilai kariveppila kadi patta curry leaf"
   }
  ]
 }

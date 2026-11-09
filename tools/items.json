@@ -1,4 +1,4 @@
-{"note":"Every item already in Daam. Check this before adding a new item.","count":345,"items":[{"id":"milk","name":"Milk","unit":"1 litre","group":"Groceries"},
+{"note":"Every item already in Daam. Check this before adding a new item.","count":346,"items":[{"id":"milk","name":"Milk","unit":"1 litre","group":"Groceries"},
 {"id":"bread","name":"Bread","unit":"500 g loaf","group":"Groceries"},
 {"id":"rice","name":"Rice, everyday","unit":"1 kg","group":"Groceries"},
 {"id":"atta","name":"Wheat flour (atta)","unit":"1 kg","group":"Groceries"},
@@ -342,4 +342,5 @@
 {"id":"xtreadmill","name":"Treadmill, home","unit":"1, motorised","group":"Sports & hobbies"},
 {"id":"xexercisecycle","name":"Exercise cycle","unit":"1","group":"Sports & hobbies"},
 {"id":"xdumbbells","name":"Dumbbells","unit":"pair of 5 kg","group":"Sports & hobbies"},
-{"id":"xdumbbellset","name":"Adjustable dumbbell set","unit":"20 kg total","group":"Sports & hobbies"}]}
+{"id":"xdumbbellset","name":"Adjustable dumbbell set","unit":"20 kg total","group":"Sports & hobbies"},
+{"id":"curryleaves","name":"Curry leaves (karuveppilai)","unit":"100 g","group":"Groceries"}]}
