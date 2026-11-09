@@ -1,0 +1,341 @@
+{
+ "note": "Items the weekly Koyambedu check may update. weekly.json holds estimated SHOP prices in rupees for the unit shown (Chennai).",
+ "items": [
+  {
+   "id": "onion",
+   "name": "Onions",
+   "unit": "1 kg",
+   "also_called": ""
+  },
+  {
+   "id": "tomato",
+   "name": "Tomatoes",
+   "unit": "1 kg",
+   "also_called": ""
+  },
+  {
+   "id": "potato",
+   "name": "Potatoes",
+   "unit": "1 kg",
+   "also_called": ""
+  },
+  {
+   "id": "garlic",
+   "name": "Garlic",
+   "unit": "1 kg",
+   "also_called": ""
+  },
+  {
+   "id": "carrot",
+   "name": "carrot",
+   "unit": "",
+   "also_called": "gajar"
+  },
+  {
+   "id": "beans",
+   "name": "beans",
+   "unit": "",
+   "also_called": ""
+  },
+  {
+   "id": "cabbage",
+   "name": "cabbage",
+   "unit": "",
+   "also_called": ""
+  },
+  {
+   "id": "cauliflower",
+   "name": "cauliflower",
+   "unit": "",
+   "also_called": ""
+  },
+  {
+   "id": "brinjal",
+   "name": "brinjal",
+   "unit": "",
+   "also_called": "eggplant aubergine kathirikai baingan"
+  },
+  {
+   "id": "okra",
+   "name": "okra",
+   "unit": "",
+   "also_called": "bhindi vendakkai"
+  },
+  {
+   "id": "cucumber",
+   "name": "cucumber",
+   "unit": "",
+   "also_called": ""
+  },
+  {
+   "id": "capsicum",
+   "name": "capsicum",
+   "unit": "",
+   "also_called": "bell pepper shimla mirch"
+  },
+  {
+   "id": "chilli",
+   "name": "chilli",
+   "unit": "",
+   "also_called": "chili mirchi"
+  },
+  {
+   "id": "ginger",
+   "name": "ginger",
+   "unit": "",
+   "also_called": "adrak inji"
+  },
+  {
+   "id": "coriander",
+   "name": "coriander",
+   "unit": "",
+   "also_called": "cilantro dhania kothamalli"
+  },
+  {
+   "id": "lemon",
+   "name": "lemon",
+   "unit": "",
+   "also_called": "elumichai nimbu"
+  },
+  {
+   "id": "beetroot",
+   "name": "beetroot",
+   "unit": "",
+   "also_called": ""
+  },
+  {
+   "id": "drumstick",
+   "name": "drumstick",
+   "unit": "",
+   "also_called": "murungakkai moringa"
+  },
+  {
+   "id": "peas",
+   "name": "peas",
+   "unit": "",
+   "also_called": ""
+  },
+  {
+   "id": "pumpkin",
+   "name": "pumpkin",
+   "unit": "",
+   "also_called": ""
+  },
+  {
+   "id": "spinach",
+   "name": "spinach",
+   "unit": "",
+   "also_called": "palak keerai greens"
+  },
+  {
+   "id": "corn",
+   "name": "corn",
+   "unit": "",
+   "also_called": ""
+  },
+  {
+   "id": "mushroom",
+   "name": "mushroom",
+   "unit": "",
+   "also_called": ""
+  },
+  {
+   "id": "sirukeerai",
+   "name": "sirukeerai",
+   "unit": "",
+   "also_called": "sirukeerai keerai greens"
+  },
+  {
+   "id": "mint",
+   "name": "mint",
+   "unit": "",
+   "also_called": "puthina pudina"
+  },
+  {
+   "id": "coconutkg",
+   "name": "coconutkg",
+   "unit": "",
+   "also_called": "thengai nariyal"
+  },
+  {
+   "id": "ootypotato",
+   "name": "ootypotato",
+   "unit": "",
+   "also_called": "potato urulai"
+  },
+  {
+   "id": "smallonion",
+   "name": "smallonion",
+   "unit": "",
+   "also_called": "sambar onion chinna vengayam shallot"
+  },
+  {
+   "id": "radish",
+   "name": "radish",
+   "unit": "",
+   "also_called": "mullangi mooli"
+  },
+  {
+   "id": "chowchow",
+   "name": "chowchow",
+   "unit": "",
+   "also_called": "chow chow chayote bangalore kathirikai"
+  },
+  {
+   "id": "broadbeans",
+   "name": "broadbeans",
+   "unit": "",
+   "also_called": "avarai avarakkai broad beans"
+  },
+  {
+   "id": "bittergourd",
+   "name": "bittergourd",
+   "unit": "",
+   "also_called": "pavakkai paneer pavakkai karela"
+  },
+  {
+   "id": "sweetpotato",
+   "name": "sweetpotato",
+   "unit": "",
+   "also_called": "sakkaravalli kizhangu shakarkandi"
+  },
+  {
+   "id": "clusterbeans",
+   "name": "clusterbeans",
+   "unit": "",
+   "also_called": "kothavarangai guar"
+  },
+  {
+   "id": "taro",
+   "name": "taro",
+   "unit": "",
+   "also_called": "sembu seppankizhangu arbi"
+  },
+  {
+   "id": "yamsmall",
+   "name": "yamsmall",
+   "unit": "",
+   "also_called": "pidi karunai karanai yam"
+  },
+  {
+   "id": "snakegourd",
+   "name": "snakegourd",
+   "unit": "",
+   "also_called": "pudalangai podalangai"
+  },
+  {
+   "id": "bottlegourd",
+   "name": "bottlegourd",
+   "unit": "",
+   "also_called": "sorakkai suraikai lauki"
+  },
+  {
+   "id": "elephantyam",
+   "name": "elephantyam",
+   "unit": "",
+   "also_called": "senai kizhangu suran jimikand"
+  },
+  {
+   "id": "ashgourd",
+   "name": "ashgourd",
+   "unit": "",
+   "also_called": "pusanikai poosani white pumpkin petha"
+  },
+  {
+   "id": "kohlrabi",
+   "name": "kohlrabi",
+   "unit": "",
+   "also_called": "nookal nukkal knolkhol"
+  },
+  {
+   "id": "ivygourd",
+   "name": "ivygourd",
+   "unit": "",
+   "also_called": "kovakkai tindora"
+  },
+  {
+   "id": "ridgegourd",
+   "name": "ridgegourd",
+   "unit": "",
+   "also_called": "peerkangai turai"
+  },
+  {
+   "id": "amla",
+   "name": "amla",
+   "unit": "",
+   "also_called": "nellikai amla"
+  },
+  {
+   "id": "turkeyberry",
+   "name": "turkeyberry",
+   "unit": "",
+   "also_called": "sundakkai"
+  },
+  {
+   "id": "sprouts",
+   "name": "sprouts",
+   "unit": "",
+   "also_called": "mulaikattiya payaru"
+  },
+  {
+   "id": "rawmango",
+   "name": "rawmango",
+   "unit": "",
+   "also_called": "mangai maangai kairi"
+  },
+  {
+   "id": "longbeans",
+   "name": "longbeans",
+   "unit": "",
+   "also_called": "karamani cowpea long beans"
+  },
+  {
+   "id": "bananastem",
+   "name": "bananastem",
+   "unit": "",
+   "also_called": "vazhaithandu vazha thandu"
+  },
+  {
+   "id": "rawbanana",
+   "name": "rawbanana",
+   "unit": "",
+   "also_called": "vazhakkai plantain"
+  },
+  {
+   "id": "bananaflower",
+   "name": "bananaflower",
+   "unit": "",
+   "also_called": "vazhaipoo vazhai poo"
+  },
+  {
+   "id": "tapioca",
+   "name": "tapioca",
+   "unit": "",
+   "also_called": "maravalli kizhangu kappa cassava"
+  },
+  {
+   "id": "apples",
+   "name": "Apples",
+   "unit": "1 kg",
+   "also_called": ""
+  },
+  {
+   "id": "bananas",
+   "name": "Bananas",
+   "unit": "1 kg",
+   "also_called": ""
+  },
+  {
+   "id": "oranges",
+   "name": "Oranges",
+   "unit": "1 kg",
+   "also_called": ""
+  },
+  {
+   "id": "mango",
+   "name": "Mangoes, in season",
+   "unit": "1 kg",
+   "also_called": ""
+  }
+ ]
+}
