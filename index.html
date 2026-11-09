@@ -115,7 +115,7 @@ select.mini{width:auto;padding:5px 8px;font:500 .82rem var(--mono);border-radius
       <p class="tag">What things cost, everywhere — by country, state and region.</p>
     </div>
     <div class="refresh">
-      <button class="btn" id="refresh" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg>Refresh rates</button>
+      <button class="btn" id="refresh" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg>Refresh prices</button>
       <div class="stamp" id="stamp"></div>
     </div>
   </header>
@@ -517,18 +517,57 @@ function renderStamp(msg,err){
   s.className="stamp"+(err?" err":"");
   s.textContent = msg || (ratesWhen?`Rates updated ${new Date(ratesWhen).toLocaleString([], {day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"})}`:"Using built-in rates (Nov 2026)");
 }
-async function refreshRates(){
-  const btn=$("refresh");btn.disabled=true;btn.classList.add("spin");renderStamp("Fetching latest rates…");
+async function refreshRates(quiet){
+  const btn=$("refresh");if(!quiet){btn.disabled=true;btn.classList.add("spin");renderStamp("Fetching latest rates…")}
   try{
     const ctrl=new AbortController();const t=setTimeout(()=>ctrl.abort(),8000);
-    const r=await fetch("https://open.er-api.com/v6/latest/USD",{signal:ctrl.signal});clearTimeout(t);
+    const r=await fetch("https://open.er-api.com/v6/latest/USD",{signal:ctrl.signal,cache:"no-store"});clearTimeout(t);
     const j=await r.json();
     if(j.result!=="success"||!j.rates) throw new Error("bad");
     const next={...rates};Object.keys(BASE_RATES).forEach(k=>{if(j.rates[k]) next[k]=j.rates[k]});
     rates=next;ratesWhen=Date.now();store.set("rates",rates);store.set("ratesWhen",ratesWhen);
-    renderStamp();renderAll();
+    if(!quiet){renderStamp();renderAll()}
+    return true;
   }catch{
-    renderStamp("Couldn't reach the rate service. Showing saved rates.",true);
+    if(!quiet)renderStamp("Couldn't reach the rate service. Showing saved rates.",true);
+    return false;
+  }finally{if(!quiet){btn.disabled=false;btn.classList.remove("spin")}}
+}
+// Live gold & silver spot price straight from gold-api.com (free, no key).
+async function fetchMetals(){
+  let ok=false;const now=new Date().toISOString(),OZ=31.1034768;
+  await Promise.all([["XAU","gold"],["XAG","silver"]].map(async([sym,key])=>{
+    try{
+      const ctrl=new AbortController();const t=setTimeout(()=>ctrl.abort(),8000);
+      const r=await fetch(`https://api.gold-api.com/price/${sym}`,{signal:ctrl.signal,cache:"no-store"});clearTimeout(t);
+      const j=await r.json();const g=parseFloat(j.price)/OZ;if(!(g>0))return;
+      const set=(id,usd)=>{const it=ITEMS.find(i=>i.id===id);if(it){it.usd=usd;LIVE[id]={when:now}}};
+      if(key==="gold"){set("gold",g*10);set("gold22",g*10*.916)}else set("silver",g*1000);
+      ok=true;
+    }catch{}
+  }));
+  return ok;
+}
+// The Refresh button: exchange rates, gold & silver, the latest prices saved in Daam
+// (weekly.json + prices.json), and today's mandi prices if a data.gov.in key is saved.
+async function refreshAll(){
+  const btn=$("refresh");if(btn.disabled)return;
+  btn.disabled=true;btn.classList.add("spin");renderStamp("Fetching latest prices…");
+  const key=store.get("mandiKey","");
+  try{
+    const [rOk,mOk,lOk,wOk]=await Promise.all([refreshRates(true),fetchMetals(),loadLive(),loadWeekly()]);
+    const mandi=key?await fetchMandi(key):0;
+    const done=[],failed=[];
+    (rOk?done:failed).push("exchange rates");(mOk?done:failed).push("gold & silver");
+    (lOk&&wOk?done:failed).push("Daam's saved prices");
+    if(key){if(mandi>0)done.push(`market prices for ${mandi} items`);else failed.push("market prices")}
+    const t=new Date().toLocaleString([], {day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"});
+    let msg=done.length?`Updated ${t}: ${done.join(", ")}.`:"Couldn't reach any price source. Showing saved prices.";
+    if(done.length&&failed.length)msg+=` Couldn't reach ${failed.join(", ")}.`;
+    if(!key)msg+=" Add a data.gov.in key at the bottom of the page for live vegetable, fruit & grain prices.";
+    renderStamp(msg,!done.length);
+    if(!key)$("mandiBox").open=true;
+    renderAll();
   }finally{btn.disabled=false;btn.classList.remove("spin")}
 }
 
@@ -544,7 +583,7 @@ $("selState").addEventListener("change",e=>{place.state=e.target.value||null;sto
 $("search").addEventListener("input",e=>{query=e.target.value;renderPlace()});
 $("selItem").addEventListener("change",e=>{cmpItem=e.target.value;store.set("cmpItem",cmpItem);renderCompare()});
 $("selScope").addEventListener("change",e=>{cmpScope=e.target.value;store.set("cmpScope",cmpScope);renderCompare()});
-$("refresh").addEventListener("click",refreshRates);
+$("refresh").addEventListener("click",refreshAll);
 // ---- Update price: viewer enters what they actually paid; saved on this phone ----
 $("placeBoard").addEventListener("click",e=>{
   const b=e.target.closest("[data-edit]");
@@ -573,11 +612,11 @@ function liveTag(it,c){const d=LIVE[it.id];if(!d){if(c.code==="IN"&&(!place.stat
   return `<div class="live">● ${d.trend?"market-adjusted":"live"} · ${new Date(d.when).toLocaleDateString([], {day:"numeric",month:"short"})}</div>`}
 async function loadLive(){
   try{
-    const r=await fetch("prices.json?d="+new Date().toISOString().slice(0,10),{cache:"no-store"});if(!r.ok)return;
+    const r=await fetch("prices.json?t="+Date.now(),{cache:"no-store"});if(!r.ok)return false;
     const j=await r.json();
     if(j.rates&&j.rates_updated&&(!ratesWhen||Date.parse(j.rates_updated)>ratesWhen)){
       Object.keys(BASE_RATES).forEach(k=>{if(j.rates[k])rates[k]=j.rates[k]});ratesWhen=Date.parse(j.rates_updated);store.set("rates",rates);store.set("ratesWhen",ratesWhen);renderStamp()}
-    const set=(id,usd,when)=>{const it=ITEMS.find(i=>i.id===id);if(it&&usd>0){it.usd=usd;LIVE[id]={when}}};
+    const set=(id,usd,when)=>{const it=ITEMS.find(i=>i.id===id);if(it&&usd>0&&!(LIVE[id]&&Date.parse(LIVE[id].when)>Date.parse(when))){it.usd=usd;LIVE[id]={when}}};
     if(j.gold){set("gold",j.gold.usd_per_g*10,j.gold.updated);set("gold22",j.gold.usd_per_g*10*.916,j.gold.updated)}
     if(j.silver){set("silver",j.silver.usd_per_g*1000,j.silver.updated)}
     Object.entries(j.mandi||{}).forEach(([id,m])=>{
@@ -585,13 +624,13 @@ async function loadLive(){
       Object.entries(m).forEach(([k,v])=>{if(k==="updated")return;if(k==="IN")o.IN=v;else o["IN:"+k]=v});
       LIVE[id]={when:m.updated,india:true};
     });
-    applyMandi(store.get("mandi",{}));renderAll();
-  }catch{}
+    applyMandi(store.get("mandi",{}));renderAll();return true;
+  }catch{return false}
 }
 fillPlaceSelects();fillCompareSelects();renderCats();renderStamp();renderAll();loadLive();
 
 // ---- Mandi prices fetched from the viewer's own phone (data.gov.in blocks servers abroad) ----
-const MANDI_ITEMS={mint:["Mint(Pudina)", 1.6],coriander:["Coriander(Leaves)", 1.6],spinach:["Spinach", 1.6],sirukeerai:["Amaranthus", 1.6],radish:["Raddish", 1.6],chowchow:["Chow Chow", 1.6],bittergourd:["Bitter gourd", 1.6],sweetpotato:["Sweet Potato", 1.6],clusterbeans:["Cluster beans", 1.6],taro:["Colacasia", 1.6],snakegourd:["Snakeguard", 1.6],bottlegourd:["Bottle gourd", 1.6],elephantyam:["Elephant Yam (Suran)", 1.6],ashgourd:["Ashgourd", 1.6],kohlrabi:["Knool Khol", 1.6],ivygourd:["Little gourd (Kundru)", 1.6],ridgegourd:["Ridgeguard(Tori)", 1.6],amla:["Amla(Nelli Kai)", 1.6],tapioca:["Tapioca", 1.6],rawbanana:["Banana - Green", 1.6],longbeans:["Cowpea (Veg)", 1.6],lemon:["Lemon", 1.6],cauliflower:["Cauliflower", 1.6],papaya:["Papaya", 1.5],pomegranate:["Pomegranate", 1.5],guava:["Guava", 1.5],grapesgreen:["Grapes", 1.5],grapesblack:["Grapes", 1.5],watermelon:["Water Melon", 1.5],muskmelon:["Karbuja(Musk Melon)", 1.5],pineapple:["Pineapple", 1.5],sapota:["Chikoos(Sapota)", 1.5],custardapple:["Custard Apple (Sharifa)", 1.5],jackfruit:["Jack Fruit", 1.5],mosambi:["Mousambi(Sweet Lime)", 1.5],pear:["Pear(Marasebu)", 1.5],plum:["Plum", 1.5],kiwi:["Kiwi Fruit", 1.5],dragonfruit:["Dragon Fruit", 1.5],litchi:["Litchi", 1.5],jamun:["Jamun(Narale Hannu)", 1.5],ber:["Ber(Zizyphus/Borehannu)", 1.5],carrot:["Carrot", 1.6],beans:["Beans", 1.6],cabbage:["Cabbage", 1.6],brinjal:["Brinjal", 1.6],okra:["Bhindi(Ladies Finger)", 1.6],cucumber:["Cucumbar(Kheera)", 1.6],capsicum:["Capsicum", 1.6],chilli:["Green Chilli", 1.6],ginger:["Ginger(Green)", 1.6],beetroot:["Beetroot", 1.6],drumstick:["Drumstick", 1.6],peas:["Green Peas", 1.6],pumpkin:["Pumpkin", 1.6],onion:["Onion",1.5],tomato:["Tomato",1.6],potato:["Potato",1.5],garlic:["Garlic",1.4],bananas:["Banana",1.6],apples:["Apple",1.5],
+const MANDI_ITEMS={mint:["Mint(Pudina)", 1.6],coriander:["Coriander(Leaves)", 1.6],spinach:["Spinach", 1.6],sirukeerai:["Amaranthus", 1.6],radish:["Raddish", 1.6],chowchow:["Chow Chow", 1.6],bittergourd:["Bitter gourd", 1.6],sweetpotato:["Sweet Potato", 1.6],clusterbeans:["Cluster beans", 1.6],taro:["Colacasia", 1.6],snakegourd:["Snakeguard", 1.6],bottlegourd:["Bottle gourd", 1.6],elephantyam:["Elephant Yam (Suran)", 1.6],ashgourd:["Ashgourd", 1.6],kohlrabi:["Knool Khol", 1.6],ivygourd:["Little gourd (Kundru)", 1.6],ridgegourd:["Ridgeguard(Tori)", 1.6],amla:["Amla(Nelli Kai)", 1.6],tapioca:["Tapioca", 1.6],rawbanana:["Banana - Green", 1.6],longbeans:["Cowpea (Veg)", 1.6],lemon:["Lemon", 1.6],cauliflower:["Cauliflower", 1.6],papaya:["Papaya", 1.5],pomegranate:["Pomegranate", 1.5],guava:["Guava", 1.5],grapesgreen:["Grapes", 1.5],grapesblack:["Grapes", 1.5],watermelon:["Water Melon", 1.5],muskmelon:["Karbuja(Musk Melon)", 1.5],pineapple:["Pineapple", 1.5],sapota:["Chikoos(Sapota)", 1.5],custardapple:["Custard Apple (Sharifa)", 1.5],jackfruit:["Jack Fruit", 1.5],mosambi:["Mousambi(Sweet Lime)", 1.5],pear:["Pear(Marasebu)", 1.5],plum:["Plum", 1.5],kiwi:["Kiwi Fruit", 1.5],dragonfruit:["Dragon Fruit", 1.5],litchi:["Litchi", 1.5],jamun:["Jamun(Narale Hannu)", 1.5],ber:["Ber(Zizyphus/Borehannu)", 1.5],carrot:["Carrot", 1.6],beans:["Beans", 1.6],cabbage:["Cabbage", 1.6],brinjal:["Brinjal", 1.6],okra:["Bhindi(Ladies Finger)", 1.6],cucumber:["Cucumbar(Kheera)", 1.6],capsicum:["Capsicum", 1.6],chilli:["Green Chilli", 1.6],ginger:["Ginger(Green)", 1.6],beetroot:["Beetroot", 1.6],drumstick:["Drumstick", 1.6],peas:["Green Peas", 1.6],pumpkin:["Pumpkin", 1.6],onion:["Onion",1.5],tomato:["Tomato",1.6],potato:["Potato",1.5],garlic:["Garlic",1.4],bananas:["Banana",1.6],apples:["Apple",1.5],sugar:["Sugar",1.1],mushroom:["Mashrooms",1.4],
   rice:["Rice",1.25],dal:["Arhar Dal(Tur Dal)",1.2],atta:["Wheat Atta",1.2],mango:["Mango",1.6],oranges:["Orange",1.6]};
 const MANDI_STATES={"Tamil Nadu":"Tamil Nadu (Chennai)","Maharashtra":"Maharashtra (Mumbai)","Karnataka":"Karnataka (Bengaluru)","NCT of Delhi":"Delhi","Delhi":"Delhi",
   "Telangana":"Telangana (Hyderabad)","Kerala":"Kerala (Kochi)","West Bengal":"West Bengal (Kolkata)","Gujarat":"Gujarat (Ahmedabad)","Rajasthan":"Rajasthan (Jaipur)",
@@ -624,8 +663,8 @@ function applyMandi(m){
 // Weekly Koyambedu check (weekly.json, written by the Monday scheduled task) resets the anchor.
 async function loadWeekly(){
   try{
-    const r=await fetch("weekly.json?d="+new Date().toISOString().slice(0,10),{cache:"no-store"});if(!r.ok)return;
-    const j=await r.json();if(!j.date||!j.items)return;
+    const r=await fetch("weekly.json?t="+Date.now(),{cache:"no-store"});if(!r.ok)return false;
+    const j=await r.json();if(!j.date||!j.items)return false;
     // Per-item dates: j.updated = {id:"YYYY-MM-DD"}; items without one use j.date.
     const upd=j.updated||{},dateOf=id=>upd[id]||j.date;
     {const seen=store.get("weeklyDates",{}),b=store.get("mandiBase",{});let ch=false;
@@ -633,7 +672,8 @@ async function loadWeekly(){
      if(ch){store.set("mandiBase",b);store.set("weeklyDates",seen)}store.set("weeklyDate",j.date)}
     // New items found by the weekly check: {id,name,unit,group,price,also_called}
     (j.new_items||[]).forEach(n=>{
-      if(!n||!n.id||ITEMS.find(i=>i.id===n.id)||!(n.price>0))return;
+      if(!n||!n.id||!(n.price>0))return;
+      if(ITEMS.find(i=>i.id===n.id)){j.items[n.id]=n.price;return}
       const group=CAT_ORDER.includes(n.group)?n.group:"Groceries";
       const cat=group==="Fruits"?"fruit":(Object.keys(CATS).find(k=>CATS[k]===group)||"g");
       ITEMS.push({id:n.id,name:String(n.name).slice(0,60),unit:String(n.unit||"1 kg").slice(0,30),cat,usd:n.price/BASE_RATES.INR,group});
@@ -643,41 +683,51 @@ async function loadWeekly(){
     Object.keys(j.items).forEach(id=>PRICE_DATES[id]=dateOf(id));
     Object.entries(j.items).forEach(([id,v])=>{if(!(v>0)||!ITEMS.find(i=>i.id===id))return;
       SHOP_BASE[id]=v;SHOP_IDS.add(id);OVERRIDE[id]=Object.assign(OVERRIDE[id]||{},{IN:v,["IN:"+TN_KEY]:v})});
-    applyMandi(store.get("mandi",{}));renderAll();
-  }catch{}
+    applyMandi(store.get("mandi",{}));renderAll();return true;
+  }catch{return false}
 }
 function mandiMsg(t,err){const el=$("mandiStatus");el.textContent=t;el.className="stamp"+(err?" err":"");el.style.textAlign="left"}
-async function fetchMandi(key,{quiet=false}={}){
-  if(!key)return;
+async function fetchMandi(key,{quiet=false,show=false}={}){
+  if(!key)return 0;
   if(!quiet)mandiMsg("Fetching today's market prices…");
   const out={},now=new Date().toISOString(),missed=[];let ok=0,blocked=0,empty=0,badKey=false;
-  for(const [id,[commodity,markup]] of Object.entries(MANDI_ITEMS)){
+  const reqs={};// one request per commodity (green and black grapes share one)
+  const one=async([id,[commodity,markup]])=>{
+    if(badKey)return;
     try{
+      const j=await (reqs[commodity]=reqs[commodity]||(async()=>{
       const u=`https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=${encodeURIComponent(key)}&format=json&limit=1000&filters%5Bcommodity%5D=${encodeURIComponent(commodity)}`;
-      const r=await fetch(u);
-      if(r.status===401||r.status===403){badKey=true;break}
-      const j=await r.json();
+      const ctrl=new AbortController();const tm=setTimeout(()=>ctrl.abort(),20000);
+      const r=await fetch(u,{signal:ctrl.signal,cache:"no-store"});clearTimeout(tm);
+      if(r.status===401||r.status===403){badKey=true;return {}}
+      return r.json();})());
+      if(badKey)return;
       const by={};
       (j.records||[]).forEach(rec=>{const st=MANDI_STATES[(rec.state||"").trim()];const v=parseFloat(rec.modal_price);if(st&&v>0)(by[st]=by[st]||[]).push(v)});
       const all=Object.values(by).flat();
-      if(!all.length){empty++;missed.push(ITEMS.find(i=>i.id===id)?.name||id);continue}
+      if(!all.length){empty++;missed.push(ITEMS.find(i=>i.id===id)?.name||id);return}
       out[id]={IN:Math.round(median(all)/100*markup*10)/10,updated:now};
       Object.entries(by).forEach(([st,vs])=>out[id][st]=Math.round(median(vs)/100*markup*10)/10);
       ok++;
     }catch{blocked++}
-  }
-  if(badKey){mandiMsg("data.gov.in rejected this key. Check you copied the whole key.",true);return}
+  };
+  // A few requests at a time so a phone on mobile data isn't flooded.
+  const list=Object.entries(MANDI_ITEMS);
+  for(let i=0;i<list.length;i+=6)await Promise.all(list.slice(i,i+6).map(one));
+  if(badKey){mandiMsg("data.gov.in rejected this key. Check you copied the whole key.",true);return -1}
   if(ok){
     const saved=store.get("mandi",{});Object.assign(saved,out);store.set("mandi",saved);store.set("mandiWhen",Date.now());
     applyMandi(saved);renderAll();
     const names=Object.keys(out).map(id=>ITEMS.find(i=>i.id===id)?.name.replace(/\s*\(.*\)/,"")||id);
     mandiMsg(`Updated ${ok} of ${Object.keys(MANDI_ITEMS).length} items from today's mandi prices: ${names.join(", ")}.${missed.length?` No trading data today for ${missed.map(n=>n.replace(/\s*\(.*\)/,"")).join(", ")}.`:""} Tap “● Live today” above to see them.`);
-    cat="Live";renderCats();
+    if(show){cat="Live";renderCats();renderAll()}
+    return ok;
   }else if(blocked){
     mandiMsg("Couldn't reach data.gov.in from this browser. The site may block apps like this, or you may be offline.",true);
   }else{
     mandiMsg("No market records today yet. Try again later in the day.",true);
   }
+  return 0;
 }
 (function initMandi(){
   const key=store.get("mandiKey","");
@@ -686,7 +736,7 @@ async function fetchMandi(key,{quiet=false}={}){
   const when=store.get("mandiWhen",0);
   if(when)mandiMsg("Last fetched "+new Date(when).toLocaleString([], {day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}));
   $("mandiSave").addEventListener("click",()=>{const k=$("mandiKey").value.trim();if(!k){mandiMsg("Paste your key first.",true);return}
-    store.set("mandiKey",k);fetchMandi(k)});
+    store.set("mandiKey",k);fetchMandi(k,{show:true})});
   if(key&&Date.now()-when>6*3600e3)setTimeout(()=>fetchMandi(key,{quiet:true}),1500);
   loadWeekly();
 })();

@@ -1,684 +1,684 @@
 {
- "note": "Items the weekly check updates (Chennai/India prices in rupees for the unit shown). check=weekly: look for a fresh price every run (vegetables, fruits, greens from Koyambedu; staples, milk, meat, fuel, LPG). check=rotate: slow-changing items; each run re-checks the ~40 with the oldest date in weekly.json 'updated'. Gold and silver are not listed: the daily GitHub Action updates them.",
+ "note": "Items the weekly check updates (Chennai/India prices in rupees for the unit shown). check=weekly: look for a fresh price every run (fuel, LPG, milk and dairy, eggs, meat, fish, oil, salt, tea, coffee, bread, water). check=live: the app's Refresh prices button fetches these from data.gov.in mandi prices, so the weekly check skips them. check=rotate: slower-changing or not in the mandi data; each run re-checks the ~40 with the oldest date in weekly.json 'updated'. Gold and silver are not listed: the Refresh button and the daily GitHub Action update them.",
  "items": [
   {
    "id": "apples",
    "name": "Apples",
    "unit": "1 kg",
    "also_called": "",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "bananas",
    "name": "Bananas",
    "unit": "1 kg",
    "also_called": "",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "oranges",
    "name": "Oranges",
    "unit": "1 kg",
    "also_called": "",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "mango",
    "name": "Mangoes, in season",
    "unit": "1 kg",
    "also_called": "",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "tomato",
    "name": "Tomatoes",
    "unit": "1 kg",
    "also_called": "",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "onion",
    "name": "Onions",
    "unit": "1 kg",
    "also_called": "",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "potato",
    "name": "Potatoes",
    "unit": "1 kg",
    "also_called": "",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "garlic",
    "name": "Garlic",
    "unit": "1 kg",
    "also_called": "",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "carrot",
    "name": "Carrot",
    "unit": "1 kg",
    "also_called": "gajar",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "spinach",
    "name": "Spinach (palak / keerai)",
    "unit": "1 bunch, ~250 g",
    "also_called": "palak keerai greens",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "beans",
    "name": "Green beans",
    "unit": "1 kg",
    "also_called": "",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "cabbage",
    "name": "Cabbage",
    "unit": "1 kg",
    "also_called": "",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "cauliflower",
    "name": "Cauliflower",
    "unit": "1 head",
    "also_called": "",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "brinjal",
    "name": "Brinjal (eggplant)",
    "unit": "1 kg",
    "also_called": "eggplant aubergine kathirikai baingan",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "okra",
    "name": "Ladies finger (okra / bhindi)",
    "unit": "1 kg",
    "also_called": "bhindi vendakkai",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "cucumber",
    "name": "Cucumber",
    "unit": "1 kg",
    "also_called": "",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "capsicum",
    "name": "Capsicum (bell pepper)",
    "unit": "1 kg",
    "also_called": "bell pepper shimla mirch",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "chilli",
    "name": "Green chilli",
    "unit": "1 kg",
    "also_called": "chili mirchi",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "ginger",
    "name": "Ginger",
    "unit": "1 kg",
    "also_called": "adrak inji",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "coriander",
    "name": "Coriander leaves",
    "unit": "1 bunch",
    "also_called": "cilantro dhania kothamalli",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "lemon",
    "name": "Lemon",
    "unit": "1",
    "also_called": "elumichai nimbu",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "beetroot",
    "name": "Beetroot",
    "unit": "1 kg",
    "also_called": "",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "drumstick",
    "name": "Drumstick (moringa)",
    "unit": "1 kg",
    "also_called": "murungakkai moringa",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "peas",
    "name": "Green peas",
    "unit": "1 kg",
    "also_called": "",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "pumpkin",
    "name": "Pumpkin",
    "unit": "1 kg",
    "also_called": "",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "mushroom",
    "name": "Mushrooms",
    "unit": "200 g pack",
    "also_called": "",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "corn",
    "name": "Sweet corn",
    "unit": "1 cob",
    "also_called": "",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "sirukeerai",
    "name": "Amaranth greens, small (sirukeerai)",
    "unit": "1 bunch",
    "also_called": "sirukeerai keerai greens",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "mint",
    "name": "Mint leaves",
    "unit": "1 bunch",
    "also_called": "puthina pudina",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "coconutkg",
    "name": "Coconut, by weight",
    "unit": "1 kg",
    "also_called": "thengai nariyal",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "ootypotato",
    "name": "Ooty potato",
    "unit": "1 kg",
    "also_called": "potato urulai",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "smallonion",
    "name": "Small onion (shallots)",
    "unit": "1 kg",
    "also_called": "sambar onion chinna vengayam shallot",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "radish",
    "name": "Radish",
    "unit": "1 kg",
    "also_called": "mullangi mooli",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "chowchow",
    "name": "Chayote (chow chow)",
    "unit": "1 kg",
    "also_called": "chow chow chayote bangalore kathirikai",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "broadbeans",
    "name": "Flat beans (avarai)",
    "unit": "1 kg",
    "also_called": "avarai avarakkai broad beans",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "bittergourd",
    "name": "Bitter gourd, small",
    "unit": "1 kg",
    "also_called": "pavakkai paneer pavakkai karela",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "sweetpotato",
    "name": "Sweet potato",
    "unit": "1 kg",
    "also_called": "sakkaravalli kizhangu shakarkandi",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "clusterbeans",
    "name": "Cluster beans",
    "unit": "1 kg",
    "also_called": "kothavarangai guar",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "taro",
    "name": "Taro root (colocasia)",
    "unit": "1 kg",
    "also_called": "sembu seppankizhangu arbi",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "yamsmall",
    "name": "Yam, small (pidi karunai)",
    "unit": "1 kg",
    "also_called": "pidi karunai karanai yam",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "snakegourd",
    "name": "Snake gourd",
    "unit": "1 kg",
    "also_called": "pudalangai podalangai",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "bottlegourd",
    "name": "Bottle gourd",
    "unit": "1 kg",
    "also_called": "sorakkai suraikai lauki",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "elephantyam",
    "name": "Elephant foot yam",
    "unit": "1 kg",
    "also_called": "senai kizhangu suran jimikand",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "ashgourd",
    "name": "Ash gourd",
    "unit": "1 kg",
    "also_called": "pusanikai poosani white pumpkin petha",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "kohlrabi",
    "name": "Knol-khol (kohlrabi)",
    "unit": "1 kg",
    "also_called": "nookal nukkal knolkhol",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "ivygourd",
    "name": "Ivy gourd",
    "unit": "1 kg",
    "also_called": "kovakkai tindora",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "ridgegourd",
    "name": "Ridge gourd",
    "unit": "1 kg",
    "also_called": "peerkangai turai",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "amla",
    "name": "Indian gooseberry (amla)",
    "unit": "1 kg",
    "also_called": "nellikai amla",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "turkeyberry",
    "name": "Turkey berry",
    "unit": "1 kg",
    "also_called": "sundakkai",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "sprouts",
    "name": "Sprouts, mixed",
    "unit": "1 pack",
    "also_called": "mulaikattiya payaru",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "rawmango",
    "name": "Raw mango",
    "unit": "1 kg",
    "also_called": "mangai maangai kairi",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "longbeans",
    "name": "Yardlong beans (karamani)",
    "unit": "1 kg",
    "also_called": "karamani cowpea long beans",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "bananastem",
    "name": "Banana stem",
    "unit": "1 piece",
    "also_called": "vazhaithandu vazha thandu",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "rawbanana",
    "name": "Raw banana (plantain)",
    "unit": "1 piece",
    "also_called": "vazhakkai plantain",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "bananaflower",
    "name": "Banana flower",
    "unit": "1 piece",
    "also_called": "vazhaipoo vazhai poo",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "tapioca",
    "name": "Tapioca (cassava)",
    "unit": "1 kg",
    "also_called": "maravalli kizhangu kappa cassava",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "papaya",
    "name": "Papaya",
    "unit": "1 kg",
    "also_called": "pappali papita fruit",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "pomegranate",
    "name": "Pomegranate",
    "unit": "1 kg",
    "also_called": "mathulai anar fruit",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "guava",
    "name": "Guava",
    "unit": "1 kg",
    "also_called": "koyya amrood fruit",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "grapesgreen",
    "name": "Grapes, green",
    "unit": "1 kg",
    "also_called": "thratchai angoor fruit",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "grapesblack",
    "name": "Grapes, black",
    "unit": "1 kg",
    "also_called": "thratchai angoor kala fruit",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "watermelon",
    "name": "Watermelon",
    "unit": "1 kg",
    "also_called": "tharpoosani tarbooz fruit",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "muskmelon",
    "name": "Muskmelon",
    "unit": "1 kg",
    "also_called": "kirni kharbuja cantaloupe fruit",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "pineapple",
    "name": "Pineapple",
    "unit": "1 piece",
    "also_called": "annasi ananas fruit",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "sapota",
    "name": "Sapota (chikoo)",
    "unit": "1 kg",
    "also_called": "sapota chikoo sapodilla fruit",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "custardapple",
    "name": "Custard apple",
    "unit": "1 kg",
    "also_called": "seetha pazham sitaphal sharifa fruit",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "jackfruit",
    "name": "Jackfruit, whole",
    "unit": "1 kg",
    "also_called": "pala pazham kathal fruit",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "jackpods",
    "name": "Jackfruit pods, cleaned",
    "unit": "250 g",
    "also_called": "pala chulai fruit",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "mosambi",
    "name": "Sweet lime (mosambi)",
    "unit": "1 kg",
    "also_called": "sathukudi mosambi sweet lime fruit",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "pear",
    "name": "Pear",
    "unit": "1 kg",
    "also_called": "berikai nashpati fruit",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "plum",
    "name": "Plum",
    "unit": "1 kg",
    "also_called": "aloo bukhara fruit",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "peach",
    "name": "Peach",
    "unit": "1 kg",
    "also_called": "aadu fruit",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "kiwi",
    "name": "Kiwi",
    "unit": "1 piece",
    "also_called": "kiwi fruit fruit",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "dragonfruit",
    "name": "Dragon fruit",
    "unit": "1 piece",
    "also_called": "pitaya fruit",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "avocado",
    "name": "Avocado",
    "unit": "1 piece",
    "also_called": "butter fruit vennai pazham fruit",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "strawberry",
    "name": "Strawberries",
    "unit": "200 g box",
    "also_called": "strawberry fruit",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "cherry",
    "name": "Cherries",
    "unit": "250 g",
    "also_called": "cherry fruit",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "litchi",
    "name": "Litchi",
    "unit": "1 kg",
    "also_called": "lychee lichi fruit",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "jamun",
    "name": "Jamun (java plum)",
    "unit": "1 kg",
    "also_called": "naval pazham jamun fruit",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "dates",
    "name": "Dates",
    "unit": "500 g",
    "also_called": "pericham pazham khajur fruit",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "fig",
    "name": "Figs, fresh",
    "unit": "250 g",
    "also_called": "athi pazham anjeer fruit",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "starfruit",
    "name": "Star fruit",
    "unit": "1 kg",
    "also_called": "thambaratham kamrakh carambola fruit",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "woodapple",
    "name": "Wood apple",
    "unit": "1 kg",
    "also_called": "vilam pazham bael fruit",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "rambutan",
    "name": "Rambutan",
    "unit": "1 kg",
    "also_called": "rambutan fruit",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "mangosteen",
    "name": "Mangosteen",
    "unit": "1 kg",
    "also_called": "mangustan fruit",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "passionfruit",
    "name": "Passion fruit",
    "unit": "1 kg",
    "also_called": "passion fruit fruit",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "blueberry",
    "name": "Blueberries",
    "unit": "125 g box",
    "also_called": "blueberry fruit",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "ber",
    "name": "Indian jujube (ber)",
    "unit": "1 kg",
    "also_called": "elanthai pazham ber fruit",
-   "check": "weekly"
+   "check": "live"
   },
   {
    "id": "bananarobusta",
    "name": "Banana, Robusta (green)",
    "unit": "1 kg",
    "also_called": "pachai pazham robusta cavendish fruit",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "bananapoovan",
    "name": "Banana, Poovan",
    "unit": "1 dozen",
    "also_called": "poovan pazham fruit",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "bananayelakki",
    "name": "Banana, small (yelakki)",
    "unit": "1 kg",
    "also_called": "yelakki rasthali elaichi banana fruit",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "bananared",
    "name": "Banana, red",
    "unit": "1 kg",
    "also_called": "sevvazhai red banana fruit",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "banananendran",
    "name": "Banana, Nendran",
    "unit": "1 kg",
    "also_called": "nendran kerala banana fruit",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "orangenagpur",
    "name": "Orange, Nagpur",
    "unit": "1 kg",
    "also_called": "orange santra kamala fruit",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "applekashmir",
    "name": "Apple, Kashmir / Shimla",
    "unit": "1 kg",
    "also_called": "apple seb shimla kashmir fruit",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "appleimported",
    "name": "Apple, imported (Washington, NZ)",
    "unit": "1 kg",
    "also_called": "apple imported washington fuji fruit",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "curryleaves",
    "name": "Curry leaves (karuveppilai)",
    "unit": "100 g",
    "also_called": "karuveppilai kariveppila kadi patta curry leaf",
-   "check": "weekly"
+   "check": "rotate"
   },
   {
    "id": "milk",
@@ -701,7 +701,7 @@
    "name": "Rice, everyday",
    "unit": "1 kg",
    "group": "Groceries",
-   "check": "weekly",
+   "check": "live",
    "also_called": ""
   },
   {
@@ -709,7 +709,7 @@
    "name": "Wheat flour (atta)",
    "unit": "1 kg",
    "group": "Groceries",
-   "check": "weekly",
+   "check": "live",
    "also_called": ""
   },
   {
@@ -717,7 +717,7 @@
    "name": "Lentils (toor dal)",
    "unit": "1 kg",
    "group": "Groceries",
-   "check": "weekly",
+   "check": "live",
    "also_called": ""
   },
   {
@@ -789,7 +789,7 @@
    "name": "Sugar",
    "unit": "1 kg",
    "group": "Groceries",
-   "check": "weekly",
+   "check": "live",
    "also_called": ""
   },
   {

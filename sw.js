@@ -1,5 +1,5 @@
 // Daam offline cache: app shell is cached; exchange-rate calls always go to the network.
-const CACHE = "daam-v17";
+const CACHE = "daam-v18";
 const SHELL = ["./", "index.html", "manifest.json", "icon.svg"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL))); self.skipWaiting(); });
 self.addEventListener("activate", e => {
@@ -8,7 +8,7 @@ self.addEventListener("activate", e => {
 });
 self.addEventListener("fetch", e => {
   const url = new URL(e.request.url);
-  if (e.request.method !== "GET" || url.hostname === "open.er-api.com") return;
+  if (e.request.method !== "GET" || url.hostname === "open.er-api.com" || url.hostname === "api.gold-api.com" || url.hostname === "api.data.gov.in") return;
   e.respondWith(
     fetch(e.request).then(res => {
       if (res.ok && (url.origin === location.origin || url.hostname.endsWith("gstatic.com") || url.hostname.endsWith("googleapis.com"))) {
