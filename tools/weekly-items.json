@@ -2647,6 +2647,406 @@
    "group": "Sports & hobbies",
    "check": "rotate",
    "also_called": ""
+  },
+  {
+   "id": "xmysorepak",
+   "name": "Mysore pak (ghee)",
+   "unit": "500 g",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "mysurpa mysorepak ghee sweet mithai Sri Krishna Sweets"
+  },
+  {
+   "id": "xkajukatli",
+   "name": "Kaju katli",
+   "unit": "500 g",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "kaju kathli cashew barfi burfi sweet mithai"
+  },
+  {
+   "id": "xgulabjamun",
+   "name": "Gulab jamun, tinned",
+   "unit": "1 kg tin",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "gulab jamun jamoon sweet mithai Haldiram"
+  },
+  {
+   "id": "xrasgulla",
+   "name": "Rasgulla, tinned",
+   "unit": "1 kg tin",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "rasgulla rosogolla sweet mithai Haldiram"
+  },
+  {
+   "id": "xjalebi",
+   "name": "Jangiri / jalebi",
+   "unit": "200 g",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "jangiri jalebi imarti sweet mithai"
+  },
+  {
+   "id": "xladdu",
+   "name": "Boondi laddu",
+   "unit": "250 g",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "laddu ladoo boondhi motichoor sweet mithai"
+  },
+  {
+   "id": "xsoanpapdi",
+   "name": "Soan papdi, packed",
+   "unit": "500 g",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "soan papdi son papdi sweet mithai Haldiram"
+  },
+  {
+   "id": "xbadusha",
+   "name": "Badusha (ghee)",
+   "unit": "250 g",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "badusha balushahi sweet mithai"
+  },
+  {
+   "id": "xhalwa",
+   "name": "Halwa (wheat / Tirunelveli)",
+   "unit": "250 g",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "halwa halva tirunelveli wheat godhumai sweet"
+  },
+  {
+   "id": "xpalkova",
+   "name": "Milk sweet (theratipal / palkova)",
+   "unit": "250 g",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "palkova theratipal milk peda paal kova sweet"
+  },
+  {
+   "id": "xrasmalai",
+   "name": "Rasmalai, tinned",
+   "unit": "1 kg tin",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "rasmalai ras malai sweet mithai Haldiram"
+  },
+  {
+   "id": "xmixedsweets",
+   "name": "Assorted sweets box",
+   "unit": "500 g",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "mixed sweets gift box assorted mithai Diwali A2B"
+  },
+  {
+   "id": "xadhirasam",
+   "name": "Adhirasam",
+   "unit": "250 g",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "adhirasam athirasam ariselu sweet"
+  },
+  {
+   "id": "xdairymilk",
+   "name": "Cadbury Dairy Milk",
+   "unit": "46 g bar",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "chocolate cadbury dairy milk"
+  },
+  {
+   "id": "xsilk",
+   "name": "Cadbury Dairy Milk Silk",
+   "unit": "60 g bar",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "chocolate cadbury silk"
+  },
+  {
+   "id": "xkitkat",
+   "name": "KitKat, 4 finger",
+   "unit": "38.5 g",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "chocolate nestle kitkat kit kat wafer"
+  },
+  {
+   "id": "xfivestar",
+   "name": "Cadbury 5 Star",
+   "unit": "35 g bar",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "chocolate cadbury five star 5star"
+  },
+  {
+   "id": "xmunch",
+   "name": "Nestlé Munch Max",
+   "unit": "38.5 g",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "chocolate nestle munch wafer"
+  },
+  {
+   "id": "xbournville",
+   "name": "Cadbury Bournville dark, 70%",
+   "unit": "75 g bar",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "chocolate dark cadbury bournville"
+  },
+  {
+   "id": "xamuldark",
+   "name": "Amul dark chocolate",
+   "unit": "150 g",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "chocolate dark amul"
+  },
+  {
+   "id": "xsnickers",
+   "name": "Snickers",
+   "unit": "22 g bar",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "chocolate snickers peanut"
+  },
+  {
+   "id": "xferrero",
+   "name": "Ferrero Rocher",
+   "unit": "16 pieces, 200 g",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "chocolate ferrero rocher gift"
+  },
+  {
+   "id": "xcelebrations",
+   "name": "Cadbury Celebrations gift pack",
+   "unit": "97 g",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "chocolate cadbury celebrations gift box diwali"
+  },
+  {
+   "id": "xparleg",
+   "name": "Parle-G biscuits",
+   "unit": "800 g pack",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "biscuit parle g glucose"
+  },
+  {
+   "id": "xmarie",
+   "name": "Britannia Marie Gold",
+   "unit": "950 g pack",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "biscuit marie britannia tea"
+  },
+  {
+   "id": "xgoodday",
+   "name": "Britannia Good Day butter cookies",
+   "unit": "526 g pack",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "biscuit cookies good day britannia butter"
+  },
+  {
+   "id": "xbourbon",
+   "name": "Britannia Bourbon",
+   "unit": "120 g",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "biscuit cream bourbon britannia chocolate"
+  },
+  {
+   "id": "xoreo",
+   "name": "Oreo",
+   "unit": "125 g",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "biscuit cream oreo cadbury"
+  },
+  {
+   "id": "xhideseek",
+   "name": "Parle Hide & Seek",
+   "unit": "200 g",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "biscuit cookies hide and seek parle chocolate chip"
+  },
+  {
+   "id": "xmilkbikis",
+   "name": "Britannia Milk Bikis",
+   "unit": "114 g",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "biscuit milk bikis britannia kids"
+  },
+  {
+   "id": "xmonaco",
+   "name": "Parle Monaco",
+   "unit": "696 g pack",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "biscuit salted cracker monaco parle"
+  },
+  {
+   "id": "xdarkfantasy",
+   "name": "Sunfeast Dark Fantasy Choco Fills",
+   "unit": "150 g",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "biscuit cookies dark fantasy sunfeast chocolate"
+  },
+  {
+   "id": "xunibic",
+   "name": "Unibic choco chip cookies",
+   "unit": "135 g",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "biscuit cookies unibic chocolate chip"
+  },
+  {
+   "id": "xkrackjack",
+   "name": "Parle Krackjack",
+   "unit": "706 g pack",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "biscuit cracker krackjack krack jack parle sweet salty"
+  },
+  {
+   "id": "xjimjam",
+   "name": "Britannia Jim Jam",
+   "unit": "138 g",
+   "group": "Sweets, chocolates & biscuits",
+   "check": "rotate",
+   "also_called": "biscuit cream jam jim jam britannia"
+  },
+  {
+   "id": "xbiryanichicken",
+   "name": "Chicken biryani",
+   "unit": "1 plate, restaurant",
+   "group": "Biryani",
+   "check": "rotate",
+   "also_called": "briyani biriyani chicken"
+  },
+  {
+   "id": "xbiryanimutton",
+   "name": "Mutton biryani",
+   "unit": "1 plate, restaurant",
+   "group": "Biryani",
+   "check": "rotate",
+   "also_called": "briyani biriyani mutton lamb goat"
+  },
+  {
+   "id": "xbiryaniveg",
+   "name": "Veg biryani",
+   "unit": "1 plate, restaurant",
+   "group": "Biryani",
+   "check": "rotate",
+   "also_called": "briyani biriyani vegetable veg"
+  },
+  {
+   "id": "xbiryaniegg",
+   "name": "Egg biryani",
+   "unit": "1 plate, restaurant",
+   "group": "Biryani",
+   "check": "rotate",
+   "also_called": "briyani biriyani egg muttai"
+  },
+  {
+   "id": "xbiryaniprawn",
+   "name": "Prawn biryani",
+   "unit": "1 plate, restaurant",
+   "group": "Biryani",
+   "check": "rotate",
+   "also_called": "briyani biriyani prawn shrimp eral seafood"
+  },
+  {
+   "id": "xbiryanifish",
+   "name": "Fish biryani",
+   "unit": "1 plate, restaurant",
+   "group": "Biryani",
+   "check": "rotate",
+   "also_called": "briyani biriyani fish meen seafood"
+  },
+  {
+   "id": "xbiryanipaneer",
+   "name": "Paneer biryani",
+   "unit": "1 plate, restaurant",
+   "group": "Biryani",
+   "check": "rotate",
+   "also_called": "briyani biriyani paneer"
+  },
+  {
+   "id": "xbiryanimushroom",
+   "name": "Mushroom biryani",
+   "unit": "1 plate, restaurant",
+   "group": "Biryani",
+   "check": "rotate",
+   "also_called": "briyani biriyani mushroom kaalan"
+  },
+  {
+   "id": "xbiryanidindigul",
+   "name": "Dindigul-style chicken biryani (Thalappakatti, boneless)",
+   "unit": "1 plate",
+   "group": "Biryani",
+   "check": "rotate",
+   "also_called": "briyani biriyani dindigul thalappakatti seeraga samba"
+  },
+  {
+   "id": "xbiryanihyderabadi",
+   "name": "Hyderabadi chicken dum biryani",
+   "unit": "1 plate",
+   "group": "Biryani",
+   "check": "rotate",
+   "also_called": "briyani biriyani hyderabadi dum"
+  },
+  {
+   "id": "xbiryanikolkata",
+   "name": "Kolkata chicken biryani (Arsalan, Kolkata)",
+   "unit": "1 plate",
+   "group": "Biryani",
+   "check": "rotate",
+   "also_called": "briyani biriyani kolkata calcutta aloo potato"
+  },
+  {
+   "id": "xbiryanimalabar",
+   "name": "Thalassery / Malabar chicken biryani",
+   "unit": "1 plate (Bengaluru)",
+   "group": "Biryani",
+   "check": "rotate",
+   "also_called": "briyani biriyani thalassery malabar kerala"
+  },
+  {
+   "id": "xbiryanidonne",
+   "name": "Donne chicken biryani",
+   "unit": "1 plate (Bengaluru)",
+   "group": "Biryani",
+   "check": "rotate",
+   "also_called": "briyani biriyani donne bangalore military hotel"
+  },
+  {
+   "id": "xbiryanibucket",
+   "name": "Chicken biryani bucket",
+   "unit": "serves 3",
+   "group": "Biryani",
+   "check": "rotate",
+   "also_called": "briyani biriyani bucket family pack party"
+  },
+  {
+   "id": "xkuska",
+   "name": "Kuska (plain biryani rice)",
+   "unit": "1 plate",
+   "group": "Biryani",
+   "check": "rotate",
+   "also_called": "kuska kushka khuska plain biryani rice"
   }
  ]
 }
