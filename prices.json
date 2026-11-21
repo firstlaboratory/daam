@@ -167,17 +167,17 @@
   "ZWG": 26.5698,
   "ZWL": 26.5698
  },
- "rates_updated": "2026-11-20T08:32+00:00",
+ "rates_updated": "2026-11-21T08:16+00:00",
  "gold": {
-  "usd_per_g": 115.4266,
-  "updated": "2026-11-20T08:32+00:00"
+  "usd_per_g": 113.7815,
+  "updated": "2026-11-21T08:16+00:00"
  },
  "silver": {
-  "usd_per_g": 1.3666,
-  "updated": "2026-11-20T08:32+00:00"
+  "usd_per_g": 1.3208,
+  "updated": "2026-11-21T08:16+00:00"
  },
  "mandi": {},
- "updated": "2026-11-20T08:32+00:00",
+ "updated": "2026-11-21T08:16+00:00",
  "log": [
   "rates ok",
   "gold ok",
@@ -191,7 +191,7 @@
   "mandi rice failed: <urlopen error [Errno 111] Connection refused>",
   "mandi dal failed: <urlopen error [Errno 111] Connection refused>",
   "mandi atta failed: <urlopen error [Errno 111] Connection refused>",
-  "mandi mango failed: <urlopen error [Errno 111] Connection refused>",
-  "mandi oranges failed: <urlopen error [Errno 111] Connection refused>"
+  "mandi mango failed: <urlopen error timed out>",
+  "mandi oranges failed: <urlopen error timed out>"
  ]
 }
